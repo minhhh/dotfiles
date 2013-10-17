@@ -1,8 +1,3 @@
-# Get the aliases and functions
-if [ -f ~/.bashrc ]; then
-         . ~/.bashrc
-fi
-
 export PATH=$PATH:$HOME/bin:$HOME/android/tools:$HOME/android/platform-tools:$HOME/android
 #export PATH=$PATH:$HOME/play-2.0.4
 #export PATH=$PATH:$HOME/play-2.1.3
