@@ -24,3 +24,5 @@ eval "$(pyenv init -)"
 
 [[ -s "$DIR/.myalias" ]] && source "$DIR/.myalias"
 
+# List my alias and common commands
+alias cc='[[ -s "$DIR/.cc" ]] && cat "$DIR/.cc"'
