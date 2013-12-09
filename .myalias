@@ -8,5 +8,3 @@ alias is="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.p
 function cd {
     builtin cd "$@" && ls
 }
-
-### PROJECT SPECIFIC
