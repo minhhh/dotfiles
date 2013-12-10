@@ -2,12 +2,13 @@
 alias mga="git add"
 alias mgb="git branch"
 alias mgl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias mgm="git merge"
 alias mgp="git push"
 alias mgs="git status"
 
 alias ll="ls -la"
 
-alias is="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app/Contents/MacOS/iPhone\ Simulator -SimulateApplication"
+alias mis="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app/Contents/MacOS/iPhone\ Simulator -SimulateApplication"
 
 # List directory content upon cd
 function cd {
