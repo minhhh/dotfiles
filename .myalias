@@ -1,10 +1,18 @@
 # Git related
 alias mga="git add"
 alias mgb="git branch"
+alias mgc="git commit"
+alias mgcl="git clean"
+alias mgco="git checkout"
+alias mgf="git fetch"
 alias mgl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias mgm="git merge"
-alias mgp="git push"
+alias mgp="git pull"
+alias mgpu="git push"
+alias mgr="git reset"
+alias mgrb="git rebase"
 alias mgs="git status"
+alias mgst="git stash"
 
 alias ll="ls -la"
 
