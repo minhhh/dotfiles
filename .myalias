@@ -1,5 +1,6 @@
 # Git related
 alias mga="git add"
+alias mgau="git add -u"
 alias mgb="git branch"
 alias mgc="git commit"
 alias mgcl="git clean"
