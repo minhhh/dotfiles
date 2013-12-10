@@ -5,3 +5,5 @@ ssh -L localhost:3306:192.168.56.201:3306 -N 127.0.0.1
 echo "ibase=10;obase=16; 255"|bc -l
 echo "5/3" | bc -l
 
+# Using xargs and find and awk
+find . -name "*.bak" -print0 | awk '{print $0}' | xargs -0 -I {} mv {} ~/old.files
