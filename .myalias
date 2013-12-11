@@ -5,6 +5,7 @@ alias mgb="git branch"
 alias mgc="git commit"
 alias mgcl="git clean"
 alias mgco="git checkout"
+alias mgd="git diff"
 alias mgf="git fetch"
 alias mgl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias mgm="git merge"
@@ -14,6 +15,7 @@ alias mgr="git reset"
 alias mgrb="git rebase"
 alias mgs="git status"
 alias mgst="git stash"
+alias mgt="git tag"
 
 alias ll="ls -la"
 
@@ -21,5 +23,6 @@ alias mis="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.
 
 # List directory content upon cd
 function cd {
-    builtin cd "$@" && ls
+    builtin cd "$@" && pushd . 1> /dev/null && ls
 }
+alias cd-="popd 1> /dev/null"
