@@ -2,5 +2,11 @@ alias gitlog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cres
 
 alias ll="ls -la"
 
+alias is="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app/Contents/MacOS/iPhone\ Simulator -SimulateApplication"
+
+# List directory content upon cd
+function cd {
+    builtin cd "$@" && ls
+}
 
 ### PROJECT SPECIFIC
