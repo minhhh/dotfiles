@@ -1,3 +1,6 @@
+# Copy using rsync
+rsync -l -P source dest
+
 # Map localhost port to some server port
 ssh -L localhost:3306:192.168.56.201:3306 ubuntu@xx.xx.xx.xx -i ~/.ssh/id_rsa
 
