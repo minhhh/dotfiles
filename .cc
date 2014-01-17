@@ -1,8 +1,11 @@
+# Using sed and awk to filter command line output
+ll | sed -n "1,10p" | awk '{print $0}'
+
 # ack file
 ack -Q --smart-case --js "under_dungeon" --ignore-directory=build --ignore-file=is:packed_us.js --ignore-file=is:packed_jp.js
 
 # Copy using rsync
-rsync -l -P source dest
+rsync -lav -P source dest
 
 # Map localhost port to some server port
 ssh -L localhost:3306:192.168.56.201:3306 ubuntu@xx.xx.xx.xx -i ~/.ssh/id_rsa
