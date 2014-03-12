@@ -1,6 +1,17 @@
+### Copy with rsync and progress
+    rsync -l -P source dest
+
+### Convert unix time to date
+    date -d @1232144092
+    date -d "Apr 25, 2011 12:12:12" +%s
+
 # Git
     git fetch -p
     git submodule add <git@github ...> snipmate-snippets/snippets/
+
+    git log | cat -s
+    git show-ref --tags
+    git branch --contains d590f2
 
 ### Using sed and awk to filter command line output
     ll | sed -n "1,10p" | awk '{print $0}'
