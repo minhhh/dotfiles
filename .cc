@@ -1,3 +1,6 @@
+### VIM
+    :%!tidy -qicbn -asxhtml - Tidy up the whole file HTML
+
 ### Copy with rsync and progress
     rsync -l -P source dest
 
