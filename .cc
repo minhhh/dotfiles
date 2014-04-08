@@ -1,3 +1,6 @@
+### Get size of files and folder
+    ls -A | awk '{system("du -sm \""$0"\"")}'| sort -nr | head
+
 ### VIM
     :%!tidy -qicbn -asxhtml - Tidy up the whole file HTML
 
