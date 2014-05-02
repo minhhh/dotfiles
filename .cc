@@ -19,6 +19,9 @@
     git show-ref --tags
     git branch --contains d590f2
 
+    # revert a merge
+    git revert -m 1 [sha]
+
 ### Using sed and awk to filter command line output
     ll | sed -n "1,10p" | awk '{print $0}'
 
