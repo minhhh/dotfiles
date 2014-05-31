@@ -1,3 +1,6 @@
+### Generate random string
+    cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1
+
 ### Get size of files and folder
     ls -A | awk '{system("du -sm \""$0"\"")}'| sort -nr | head
 
