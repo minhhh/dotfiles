@@ -12,7 +12,7 @@
 
 ### Convert unix time to date
     date -d @1232144092
-    date -d "Apr 25, 2011 12:12:12" +%s
+    sudo date --set "25 July 2014 15:00:00"
 
 # Git
     git fetch -p
@@ -24,6 +24,8 @@
 
     # revert a merge
     git revert -m 1 [sha]
+
+    adb logcat /wgshared/v8helper.h:V *:S
 
 ### Using sed and awk to filter command line output
     ll | sed -n "1,10p" | awk '{print $0}'
