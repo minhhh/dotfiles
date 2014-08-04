@@ -29,4 +29,4 @@ function cd {
     builtin cd "$@" && pushd . 1> /dev/null && ls -a
 }
 alias cd-="popd 1> /dev/null"
-alias vim="/usr/local/Cellar/macvim/7.4-72/MacVim.app/Contents/MacOS/Vim"
+alias vim="/usr/local/Cellar/macvim/7.4-73/MacVim.app/Contents/MacOS/Vim"
