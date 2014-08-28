@@ -31,7 +31,7 @@
     ll | sed -n "1,10p" | awk '{print $0}'
 
 ### ack file
-    ack -Q --smart-case --js --ignore-file=match:/packed.*\.js/ --ignore-file=is:Code/tag --ignore-dir=build --ignore-dir=Code/JSON --ignore-dir=Tools "test"
+    ack -Q --smart-case --ignore-file=match:/packed.*\.js/ --ignore-file=is:Code/tag --ignore-dir=build --ignore-dir=Code/JSON --ignore-dir=Tools --js "test"
 
 ### Copy using rsync
     rsync -lav -P source dest
