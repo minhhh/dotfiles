@@ -1,5 +1,5 @@
 ### Rsync showing progress
-    rsync -vrltd  --stats --human-readable <source> <dest> | pv -lep -s 23416 >/dev/nul
+    export SOURCE=<source> DEST=<dest> && export SC=$(find "$SOURCE" | wc -l) rsy&& rsync -vrltd  --stats --human-readable "$SOURCE" "$DEST" | pv -lep -s $SC > /dev/null
 
 ### Generate random hash string
     cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1
