@@ -1,3 +1,6 @@
+### Rsync showing progress
+    rsync -vrltd  --stats --human-readable <source> <dest> | pv -lep -s 23416 >/dev/nul
+
 ### Generate random hash string
     cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1
 
