@@ -29,5 +29,8 @@ export PATH=$GEM_HOME/bin:$PATH
 
 eval `ssh-agent -s`
 
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # List my alias and common commands
 alias cm='[[ -s "$DIR/.cc" ]] && cat "$DIR/.cc"'
