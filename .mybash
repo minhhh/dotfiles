@@ -20,12 +20,11 @@ eval "$(pyenv init -)"
 
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh" # This loads NVM
 
+export GEM_HOME=$HOME/gems
+export PATH=$GEM_HOME/bin:$PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 [[ -s "$DIR/.myalias" ]] && source "$DIR/.myalias"
-
-export GEM_HOME=$HOME/gems
-export PATH=$GEM_HOME/bin:$PATH
 
 eval `ssh-agent -s`
 
@@ -34,3 +33,6 @@ export LANG=en_US.UTF-8
 
 # List my alias and common commands
 alias cm='[[ -s "$DIR/.cc" ]] && cat "$DIR/.cc"'
+
+# Disable Ctrl S remap
+stty stop undef
