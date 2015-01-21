@@ -35,4 +35,4 @@ function cd {
     builtin cd "$@" && pushd . 1> /dev/null && ls -a
 }
 alias cd-="popd 1> /dev/null"
-alias vim="Vim"
+which Vim && alias vim="Vim"
