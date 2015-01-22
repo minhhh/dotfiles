@@ -49,5 +49,10 @@
     echo "ibase=10;obase=16; 255"|bc -l
     echo "5/3" | bc -l
 
+### Grep excluding files
+
+    grep -ircl --exclude=*.{png,jpg} "foo=" *
+    grep -Ir --exclude="*\.svn*" "pattern" *
+
 ### Using xargs and find and awk
     find . -name "*.bak" -print0 | awk '{print $0}' | xargs -0 -I {} mv {} ~/old.files
