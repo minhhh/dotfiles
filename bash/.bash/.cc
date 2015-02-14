@@ -17,6 +17,8 @@
     date -d @1232144092
     sudo date --set "25 July 2014 15:00:00"
 
+    date +%s
+
 # Git
     git fetch -p
     git submodule add <git@github ...> snipmate-snippets/snippets/
