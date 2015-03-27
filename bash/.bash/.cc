@@ -1,3 +1,10 @@
+### ctags
+
+    ctags --languages=C,C++ --c-kinds=+px --c++-kinds=+px --extra=+fq -R .
+    :set tags+=/usr/local/include/tags
+    :set tags+=/usr/include/tags
+    :set tags+=/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers/tags
+
 ### Rsync showing progress
     export SOURCE=<source> DEST=<dest> && export SC=$(find "$SOURCE" | wc -l) rsy&& rsync -vrltd  --stats --human-readable "$SOURCE" "$DEST" | pv -lep -s $SC > /dev/null
 
