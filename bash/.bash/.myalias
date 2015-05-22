@@ -29,6 +29,7 @@ alias mgt="git tag"
 alias ll="ls -la"
 
 alias mis="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app/Contents/MacOS/iPhone\ Simulator -SimulateApplication"
+alias mis6="open -a \"iOS Simulator\""
 
 # List directory content upon cd
 function cd {
