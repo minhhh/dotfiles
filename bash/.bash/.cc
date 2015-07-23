@@ -21,8 +21,10 @@
     rsync -l -P source dest
 
 ### Convert unix time to date
+
     date -d @1232144092
-    sudo date --set "25 July 2014 15:00:00"
+    date --set "25 July 2014 15:00:00"
+    date -d "17 June 2015 15:00:00" +%s
 
     date +%s
 
