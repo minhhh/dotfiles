@@ -68,3 +68,6 @@
 
 ### Using xargs and find and awk
     find . -name "*.bak" -print0 | awk '{print $0}' | xargs -0 -I {} mv {} ~/old.files
+
+### Bash oneline for
+    for i in {1..5}; do echo $i; done
