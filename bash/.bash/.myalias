@@ -23,7 +23,7 @@ alias mgr="git reset"
 alias mgrh="git reset --hard HEAD~100"
 alias mgrb="git rebase"
 alias mgrm="git rm"
-alias mgs="git status"
+alias mgs="git status --short --branch"
 alias mgst="git stash"
 alias mgt="git tag"
 
