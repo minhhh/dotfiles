@@ -1,4 +1,4 @@
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+MYBASH_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 export GOPATH=$HOME
 export GOBIN=$HOME/bin
@@ -22,18 +22,16 @@ eval "$(pyenv init -)"
 export NVM_DIR="$HOME/.nvm"
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh" # This loads NVM
 
-export GEM_HOME=$HOME/gems
-export PATH=$GEM_HOME/bin:$PATH
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-[[ -s "$DIR/.myalias" ]] && source "$DIR/.myalias"
+[[ -s "$MYBASH_DIR/.myalias" ]] && source "$MYBASH_DIR/.myalias"
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # List my alias and common commands
-alias cm='[[ -s "$DIR/.cc" ]] && cat "$DIR/.cc"'
+alias cm='[[ -s "$MYBASH_DIR/.cc" ]] && cat "$MYBASH_DIR/.cc"'
 
 # Disable Ctrl S remap
 stty stop undef
