@@ -28,5 +28,9 @@ CONVENIENT SETUP FOR DEV ENVIRONMENT
 ============
 
 ## Use Crontab to commit common repos
+You can add something like this to crontab to commit every 5 minutes.
 
+```
+*/5 * * * * (cd /pathtorepo && (git add -u && git commit -m "update") || echo "" && git pull --rebase && git push)
+```
 
