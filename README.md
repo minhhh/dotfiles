@@ -24,5 +24,9 @@ Add the following line to your `.bashrc` or `.bash_profile`
     [[ -f ~/.bash/.mybash ]] && . ~/.bash/.mybash
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/minhhh/dotfiles/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+CONVENIENT SETUP FOR DEV ENVIRONMENT
+============
+
+## Use Crontab to commit common repos
+
 
