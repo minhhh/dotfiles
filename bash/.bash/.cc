@@ -9,7 +9,7 @@
     export SOURCE=<source> DEST=<dest> && export SC=$(find "$SOURCE" | wc -l) && rsync -azvrltd -P --recursive --delete --stats --human-readable "$SOURCE" "$DEST" | pv -lep -s $SC > /dev/null
 
 ### Generate random hash string
-    cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1
+    cat /dev/urandom | LC_ALL=C tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1
 
 ### Get size of files and folder
     ls -A | awk '{system("du -sm \""$0"\"")}'| sort -nr | head
