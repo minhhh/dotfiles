@@ -14,11 +14,11 @@
 ### Get size of files and folder
     ls -A | awk '{system("du -sm \""$0"\"")}'| sort -nr | head
 
+### Find largest files in folder
+    find . -type f -print0 | xargs -0 -n 1 du -sm | sort -nr | head
+
 ### VIM
     :%!tidy -qicbn -asxhtml - Tidy up the whole file HTML
-
-### Copy with rsync and progress
-    rsync -l -P source dest
 
 ### Convert unix time to date
 
@@ -47,9 +47,6 @@
 ### ack ag file
     ack -Q --smart-case --ignore-file=match:/packed.*\.js/ --ignore-file=is:Code/tag --ignore-dir=build --ignore-dir=Code/JSON --ignore-dir=Tools --js "test"
     ag -Q --smart-case --ignore=packed.*\.js/ --ignore=Code/tag --ignore-dir=build --ignore-dir=Code/JSON --ignore-dir=Tools --js "test"
-
-### Copy using rsync
-    rsync -lav -P source dest
 
 ### Map localhost port to some server port
     ssh -L localhost:3306:192.168.56.201:3306 ubuntu@xx.xx.xx.xx -i ~/.ssh/id_rsa
