@@ -6,7 +6,7 @@
     :set tags+=/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers/tags
 
 ### Rsync showing progress
-    export SOURCE=<source> DEST=<dest> && export SC=$(find "$SOURCE" | wc -l) && rsync -azvrltd -P --recursive --delete --stats --human-readable "$SOURCE" "$DEST" | pv -lep -s $SC > /dev/null
+    export SOURCE=<source> DEST=<dest> && export SC=$(find "$SOURCE" | wc -l | awk '{print $0 "*2 + 17";}'  | bc) && rsync -azvrltd -P --recursive --delete --stats --human-readable "$SOURCE" "$DEST" | pv -lep -s $SC > /dev/null
 
 ### Generate random hash string
     cat /dev/urandom | LC_ALL=C tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1
