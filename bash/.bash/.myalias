@@ -42,4 +42,10 @@ which Vim 2>&1 >/dev/null && alias vimn="Vim -u NONE -N"
 # edit crontab on mac
 alias crone="VIM_CRONTAB=true EDITOR=vim crontab -e"
 
-alias mux='tmux attach || { (while ! tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh; do sleep 0.2; done)& tmux ; }'
+mux() {
+    tmux new -d -s delete-me && (tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh && tmux kill-session -t delete-me) &&\
+    (for session_window in $(tmux list-windows -a -F '#{session_name}:#{window_index}'); do
+        tmux set-window-option -t $session_window automatic-rename on
+    done) &&\
+    tmux attach || tmux attach
+}
