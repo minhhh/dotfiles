@@ -1,0 +1,6 @@
+[
+    {
+        "key":"cmd+shift+j",
+        "command": "editor.emmet.action.matchTag"
+    }
+]
