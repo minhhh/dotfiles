@@ -1,0 +1,12 @@
+.DS_Store
+*.pyc
+venv*
+.venv*
+env*
+npm-debug.log
+node_modules
+.doit.db.db
+/out
+/build
+yarn-error.log
+/.Trash*

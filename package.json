@@ -1,0 +1,21 @@
+{
+  "name": "dotfiles",
+  "version": "1.0.0",
+  "description": "Collection of dot files",
+  "main": "index.js",
+  "scripts": {
+    "cm": "npx git-cz"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.1.0"
+  },
+  "dependencies": {
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}
