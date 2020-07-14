@@ -3,7 +3,7 @@
     "editor.renderWhitespace": "boundary",
 
     "workbench.colorTheme": "Quiet Light",
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1,
     "editor.minimap.enabled": false,
 
     "workbench.editor.enablePreview": true,
@@ -72,6 +72,8 @@
     },
     "[html]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 
 }
