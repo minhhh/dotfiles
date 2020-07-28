@@ -9,10 +9,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cz-conventional-changelog": "^3.1.0"
+    "commitizen": "4.1.2",
+    "cz-conventional-changelog": "3.2.0"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
