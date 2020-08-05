@@ -3,7 +3,7 @@
   "editor.renderWhitespace": "boundary",
 
   "workbench.colorTheme": "Quiet Light",
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 2,
   "editor.minimap.enabled": false,
 
   "workbench.editor.enablePreview": true,
@@ -79,5 +79,10 @@
     "editor.tabCompletion": "on",
     "editor.suggestSelection": "first"
   },
-  "eslint.workingDirectories": [{ "mode": "auto" }]
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "java.project.importHint": false
 }
