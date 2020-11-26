@@ -3,7 +3,7 @@
   "editor.renderWhitespace": "boundary",
 
   "workbench.colorTheme": "Quiet Light",
-  "window.zoomLevel": 2,
+  "window.zoomLevel": 1,
   "editor.minimap.enabled": false,
 
   "workbench.editor.enablePreview": true,
@@ -84,5 +84,6 @@
       "mode": "auto"
     }
   ],
-  "java.project.importHint": false
+  "java.project.importHint": false,
+  "python.languageServer": "Microsoft"
 }
