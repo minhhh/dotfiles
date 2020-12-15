@@ -23,6 +23,11 @@
     {
       "before": ["k", "j"],
       "after": ["<Esc>"]
+    },
+    {
+        "before": ["<C-v>"],
+        "after": [],
+        "commands": "editor.action.clipboardPasteAction"
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
@@ -85,5 +90,6 @@
     }
   ],
   "java.project.importHint": false,
-  "python.languageServer": "Microsoft"
+"python.languageServer": "Microsoft",
+"python.condaPath": "~/miniconda3/bin/conda"
 }
