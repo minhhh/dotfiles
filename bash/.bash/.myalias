@@ -30,7 +30,8 @@ alias mgs="git status --short --branch"
 alias mgst="git stash"
 alias mgt="git tag"
 
-alias ll="ls -la"
+# alias ll="ls -la"
+alias ll="exa -lagB"
 
 alias mis="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app/Contents/MacOS/iPhone\ Simulator -SimulateApplication"
 alias mis6="open -a \"iOS Simulator\""
