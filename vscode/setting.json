@@ -90,6 +90,11 @@
     }
   ],
   "java.project.importHint": false,
-"python.languageServer": "Microsoft",
-"python.condaPath": "~/miniconda3/bin/conda"
+  "python.languageServer": "Microsoft",
+  "python.condaPath": "~/miniconda3/bin/conda",
+  "emmet.showSuggestionsAsSnippets": true,
+  "files.associations": {
+      "*html": "html", 
+      "*njk": "html"
+  },
 }
