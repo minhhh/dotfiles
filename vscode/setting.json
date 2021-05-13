@@ -114,4 +114,5 @@
       "*html": "html", 
       "*njk": "html"
   },
+  "C_Cpp.updateChannel": "Insiders",
 }
