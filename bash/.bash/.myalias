@@ -48,6 +48,12 @@ which Vim 2>&1 >/dev/null && alias vimn="Vim -u NONE -N"
 # edit crontab on mac
 alias crone="VIM_CRONTAB=true EDITOR=vim crontab -e"
 
+# utility for llama
+function la {
+  cd "$(llama "$@")"
+}
+export LLAMA_EDITOR=vim
+
 mux() {
     tmux new -d -s delete-me && (tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh && tmux kill-session -t delete-me) &&\
     (for session_window in $(tmux list-windows -a -F '#{session_name}:#{window_index}'); do
