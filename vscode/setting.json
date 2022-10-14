@@ -1,5 +1,6 @@
 {
-  "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "'Source Code Pro Medium', 'Hack'",
+  "editor.fontSize": 12,
   "editor.renderWhitespace": "boundary",
   "files.watcherExclude": {
     "**/.git/objects/**": true,
@@ -86,9 +87,11 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescriptreact]": {
+    "editor.tabSize": 2,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
+    "editor.tabSize": 2,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[html]": {
@@ -114,9 +117,7 @@
     "*njk": "html"
   },
   "C_Cpp.updateChannel": "Insiders",
-  "editor.tabSize": 8,
   "editor.cursorStyle": "line",
-  "editor.insertSpaces": false,
   "editor.lineNumbers": "on",
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.wordWrap": "off",
@@ -137,6 +138,5 @@
   },
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "window.zoomLevel": 2
+  }
 }
