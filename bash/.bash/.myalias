@@ -49,7 +49,7 @@ which Vim 2>&1 >/dev/null && alias vimn="Vim -u NONE -N"
 alias crone="VIM_CRONTAB=true EDITOR=vim crontab -e"
 
 # utility for llama
-function la {
+function lm {
   cd "$(llama "$@")"
 }
 export LLAMA_EDITOR=vim
