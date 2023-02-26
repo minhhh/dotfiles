@@ -1,5 +1,5 @@
 {
-  "editor.fontFamily": "'Source Code Pro Medium', 'Hack'",
+  "editor.fontFamily": "'Monolisa-Medium', 'Source Code Pro Medium', 'Hack'",
   "editor.fontSize": 12,
   "editor.renderWhitespace": "boundary",
   "files.watcherExclude": {
@@ -76,7 +76,6 @@
     "<C-a>": false,
     "<C-f>": false
   },
-  "editor.fontWeight": "bold",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -138,5 +137,19 @@
   },
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.inlineSuggest.enabled": true,
+  "dashboard.projectData": null,
+  "go.formatTool": "gofmt",
+  "explorer.confirmDelete": false,
+  "terminal.integrated.inheritEnv": false,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": false,
+    "markdown": true
+  },
+  "[python]": {
+    "editor.formatOnType": true
   }
 }
