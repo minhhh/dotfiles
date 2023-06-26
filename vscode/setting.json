@@ -113,7 +113,8 @@
   "emmet.showSuggestionsAsSnippets": true,
   "files.associations": {
     "*html": "html",
-    "*njk": "html"
+    "*njk": "html",
+    "*.s": "racket"
   },
   "C_Cpp.updateChannel": "Insiders",
   "editor.cursorStyle": "line",
@@ -151,5 +152,6 @@
   },
   "[python]": {
     "editor.formatOnType": true
-  }
+  },
+  "solidity.compileUsingRemoteVersion": "v0.8.17+commit.8df45f5f"
 }
