@@ -1,6 +1,6 @@
 MYBASH_DIR=`dirname ${(%):-%N}`
 
-export PS1="%B%F{green}%m%f%b:%B%F{5}%~%f%b %B%F{blue}%n%f%F{yellow}%#%f%b "
+export PS1="%B%F{green}%m%f%b:%B%F{5}%~%f%b %B%F{blue}%n%f%F{yellow}$%f%b "
 
 export GOPATH=$HOME
 export GOBIN=$HOME/bin
