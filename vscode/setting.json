@@ -153,5 +153,11 @@
   "[python]": {
     "editor.formatOnType": true
   },
-  "solidity.compileUsingRemoteVersion": "v0.8.17+commit.8df45f5f"
+  "solidity.compileUsingRemoteVersion": "v0.8.17+commit.8df45f5f",
+  "[cpp]": {
+    "editor.wordBasedSuggestions": false,
+    "editor.suggest.insertMode": "replace",
+    "editor.semanticHighlighting.enabled": true
+  },
+  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 2, ColumnLimit: 0}"
 }
