@@ -159,5 +159,6 @@
     "editor.suggest.insertMode": "replace",
     "editor.semanticHighlighting.enabled": true
   },
-  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 2, ColumnLimit: 0}"
+  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 2, ColumnLimit: 0}",
+  "cmakeFormat.exePath": "/Users/minhha/.nix-profile/bin/cmake-format"
 }
