@@ -41,7 +41,7 @@ alias mis="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.
 alias mis6="open -a \"iOS Simulator\""
 
 # List directory content upon cd
-function cd {
+function d {
     builtin cd "$@" && pushd . 1> /dev/null && ls -a
 }
 alias cd-="popd 1> /dev/null"
