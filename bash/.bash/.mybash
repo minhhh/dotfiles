@@ -10,6 +10,8 @@ export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export NDK_ROOT=$HOME/android-ndk-r10d
 export VERSIONER_PYTHON_PREFER_32_BIT=yes
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden -g \!**/node_modules/* -g \!**/.git/*'
+export FZF_DEFAULT_OPTS='--bind ctrl-n:page-down,ctrl-p:page-up'
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
