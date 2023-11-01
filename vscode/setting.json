@@ -19,8 +19,6 @@
     "**/logs/**": true,
     "**/.fdk/**": true
   },
-
-  "workbench.colorTheme": "Quiet Light",
   "editor.minimap.enabled": false,
 
   "workbench.editor.enablePreview": true,
@@ -146,9 +144,11 @@
   "terminal.integrated.inheritEnv": false,
   "github.copilot.enable": {
     "*": true,
-    "yaml": true,
     "plaintext": false,
-    "markdown": true
+    "markdown": true,
+    "scminput": false,
+    "yaml": true,
+    "typescript": true
   },
   "[python]": {
     "editor.formatOnType": true
@@ -160,5 +160,7 @@
     "editor.semanticHighlighting.enabled": true
   },
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 2, ColumnLimit: 0}",
-  "cmakeFormat.exePath": "/Users/minhha/.nix-profile/bin/cmake-format"
+  "cmakeFormat.exePath": "/Users/minhha/.nix-profile/bin/cmake-format",
+  "github.copilot.advanced": {},
+  "workbench.colorTheme": "Solarized Light"
 }
