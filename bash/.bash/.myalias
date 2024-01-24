@@ -38,8 +38,7 @@ alias mgt="git tag"
 
 alias mdr="dotnet run"
 
-# alias ll="ls -la"
-alias ll="exa -lagB --time-style long-iso"
+alias l="exa -lagB --time-style long-iso"
 alias ff="fzf"
 alias f="fzf --print0 | xargs -0 -o vim"
 
