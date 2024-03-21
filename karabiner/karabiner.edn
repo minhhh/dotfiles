@@ -51,7 +51,7 @@
                          [:n [:home :n] :tab-mode] ;; Tmux moves tab to the next position
                          [:p [:home :p] :tab-mode] ;; Tmux move tab to the previous position
                          [:open_bracket [:home :open_bracket] :tab-mode] ;; Tmux copy text
-                         [:b :home :tab-mode] ;; Tmux move tab to the previous position
+                         [:b :home :tab-mode] ;; Tmux prefix
                          ]}
 
         ;; Comma  mode
