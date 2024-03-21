@@ -1,5 +1,6 @@
 INTRODUCTION
 ============
+
 Install stow
 ```
     sudo pacman -S stow
@@ -27,7 +28,17 @@ Add the following line to your `.bashrc` or `.bash_profile`
 CONVENIENT SETUP FOR DEV ENVIRONMENT
 ============
 
+## Use vim Obsession
+
+* To use Tmux with Vim sessions
+    * Open vim
+    * Use `:Obssession` to create a session file
+    * Create `~/.vim/sessions` folder, and move the session file there
+    * Open vim again with `vim -S /Users/<username>/.vim/session/<session_name>.vim`
+    * Now next time you open tmux vim will reopen the previous session
+
 ## Use Crontab to commit common repos
+
 You can add something like this to crontab to commit every 5 minutes.
 
 ```
