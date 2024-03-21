@@ -1,0 +1,70 @@
+{:simlayers {:tab-mode {:key :tab}
+             :comma-mode {:key :comma}
+             }
+ :simlayer-threshold 250
+ :main [
+        ;; Right command mode
+        {:des "right command mode"
+                 :rules [[:right_command ["rightcommand-mode" 1] nil {:afterup ["rightcommand-mode" 0]
+                                                         :alone :right_command}]
+                         [:grave_accent_and_tilde :grave_accent_and_tilde ["rightcommand-mode" 1]]
+                         [:1 :f1 ["rightcommand-mode" 1]]
+                         [:2 :f2 ["rightcommand-mode" 1]]
+                         [:3 :f3 ["rightcommand-mode" 1]]
+                         [:4 :f4 ["rightcommand-mode" 1]]
+                         [:5 :f5 ["rightcommand-mode" 1]]
+                         [:6 :f6 ["rightcommand-mode" 1]]
+                         [:7 :f7 ["rightcommand-mode" 1]]
+                         [:8 :f8 ["rightcommand-mode" 1]]
+                         [:9 :f9 ["rightcommand-mode" 1]]
+                         [:0 :f10 ["rightcommand-mode" 1]]
+                         [:hyphen :f11 ["rightcommand-mode" 1]]
+                         [:equal_sign :f12 ["rightcommand-mode" 1]]
+                         [:c [:home :c] ["rightcommand-mode" 1]] ;; Tmux create
+                         ]}
+
+        ;; Right option mode: Duplicate some of the functions of the right command mode
+        ;; because the key position on my mac is a little shifted to the left so I misstype
+        ;; my right command and right option a lot
+        {:des "right option mode"
+                 :rules [[:right_option ["rightoption-mode" 1] nil {:afterup ["rightoption-mode" 0]
+                                                         :alone :right_option}]
+                         [:grave_accent_and_tilde :grave_accent_and_tilde ["rightoption-mode" 1]]
+                         [:1 :f1 ["rightoption-mode" 1]]
+                         [:2 :f2 ["rightoption-mode" 1]]
+                         [:3 :f3 ["rightoption-mode" 1]]
+                         [:4 :f4 ["rightoption-mode" 1]]
+                         [:5 :f5 ["rightoption-mode" 1]]
+                         [:6 :f6 ["rightoption-mode" 1]]
+                         [:7 :f7 ["rightoption-mode" 1]]
+                         [:8 :f8 ["rightoption-mode" 1]]
+                         [:9 :f9 ["rightoption-mode" 1]]
+                         [:0 :f10 ["rightoption-mode" 1]]
+                         [:hyphen :f11 ["rightoption-mode" 1]]
+                         [:equal_sign :f12 ["rightoption-mode" 1]]
+                         [:c [:home :c] ["rightoption-mode" 1]] ;; Tmux create
+                         ]}
+
+        ;; Tab mode
+        {:des "tab mode"
+                 :rules [
+                         [:n [:home :n] :tab-mode] ;; Tmux moves tab to the next position
+                         [:p [:home :p] :tab-mode] ;; Tmux move tab to the previous position
+                         [:open_bracket [:home :open_bracket] :tab-mode] ;; Tmux copy text
+                         [:b :home :tab-mode] ;; Tmux move tab to the previous position
+                         ]}
+
+        ;; Comma  mode
+        {:des "comma mode"
+                 :rules [
+                         ]}
+
+        {:des "Right Control b to Option Backspace" :rules [[:!Wb :!Odelete_or_backspace]]}
+        {:des "Right Control 0 to Home" :rules [[:!W0 :home]]}
+        {:des "Right Control e to End" :rules [[:!We :end]]}
+        {:des "Right Control h to Backspace" :rules [[:!Wb :delete_or_backspace]]}
+
+        {:des "Left Shift ~ to `" :rules [[:!Sgrave_accent_and_tilde :grave_accent_and_tilde]]}
+
+        {:des "Tilde to ESC" :rules [[:grave_accent_and_tilde :escape]]}
+  ]}
