@@ -1,3 +1,7 @@
+### Sync time ubuntu
+
+sudo systemctl restart systemd-timesyncd.service
+
 ### ctags
 
 ctags --languages=C,C++ --c-kinds=+px --c++-kinds=+px --extra=+fq -R .
