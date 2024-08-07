@@ -37,6 +37,10 @@ alias mgs="git status --short --branch"
 alias mgst="git stash"
 alias mgt="git tag"
 
+alias mp="multipass"
+alias mps="multipass start"
+alias mpst="multipass stop"
+
 alias mdr="dotnet run"
 
 alias l="exa -lagB --time-style long-iso"
@@ -58,7 +62,7 @@ alias crone="VIM_CRONTAB=true EDITOR=vim crontab -e"
 
 # utility for llama
 function lm {
-  cd "$(llama "$@")"
+  cd "$(walk "$@")"
 }
 export LLAMA_EDITOR=vim
 
