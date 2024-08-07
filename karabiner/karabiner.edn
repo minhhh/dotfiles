@@ -1,7 +1,7 @@
 {:simlayers {:tab-mode {:key :tab}
              :comma-mode {:key :comma}
              }
- :simlayer-threshold 250
+ :simlayer-threshold 500
  :main [
         ;; Right command mode
         {:des "right command mode"
@@ -49,7 +49,11 @@
         {:des "tab mode"
                  :rules [
                          [:n [:home :n] :tab-mode] ;; Tmux moves tab to the next position
-                         [:p [:home :p] :tab-mode] ;; Tmux move tab to the previous position
+                         [:p [:home :p] :tab-mode] ;; Tmux moves tab to the previous position
+                         [:j [:home :down_arrow] :tab-mode] ;; Tmux window navigation
+                         [:k [:home :up_arrow] :tab-mode] ;; Tmux window navigation
+                         [:h [:home :left_arrow] :tab-mode] ;; Tmux window navigation
+                         [:l [:home :right_arrow] :tab-mode] ;; Tmux window navigation
                          [:open_bracket [:home :open_bracket] :tab-mode] ;; Tmux copy text
                          [:b :home :tab-mode] ;; Tmux prefix
                          ]}
