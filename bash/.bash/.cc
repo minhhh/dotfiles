@@ -13,6 +13,8 @@ ctags --languages=C,C++ --c-kinds=+px --c++-kinds=+px --extra=+fq -R .
 
 export SOURCE=<source> DEST=<dest> && export SC=$(find "$SOURCE" | wc -l | awk '{print $0 "*2 + 17";}'  | bc) && rsync -azvrltd -P --recursive --delete --stats --human-readable "$SOURCE" "$DEST" | pv -lep -s $SC > /dev/null
 
+rsync -azvrltd -P --recursive --stats --human-readable "$SOURCE" "$DEST"
+
 ### Generate random hash string
 
 cat /dev/urandom | LC_ALL=C tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1
@@ -59,6 +61,8 @@ ll | sed -n "1,10p" | awk '{print $0}'
 ack -Q --smart-case --ignore-file=match:/packed.*\.js/ --ignore-file=is:Code/tag --ignore-dir=build --ignore-dir=Code/JSON --ignore-dir=Tools --js "test"
 ag -Q --smart-case --ignore=packed.*\.js/ --ignore=Code/tag --ignore-dir=build --ignore-dir=Code/JSON --ignore-dir=Tools --js "test"
 
+ag -Q --smart-case -G '\.java$' 'ftp' .
+
 ### Map localhost port to some server port
 
 ssh -L localhost:3306:192.168.56.201:3306 ubuntu@xx.xx.xx.xx -i ~/.ssh/id_rsa
@@ -90,3 +94,7 @@ for i in {1..5}; do echo $i; done
 jrnl -to today
 
 jrnl --edit
+
+### nix
+
+NIXPKGS_ALLOW_UNFREE=1 nix-env -irf env.nix
