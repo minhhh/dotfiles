@@ -155,12 +155,13 @@
   },
   "solidity.compileUsingRemoteVersion": "v0.8.17+commit.8df45f5f",
   "[cpp]": {
-    "editor.wordBasedSuggestions": false,
+    "editor.wordBasedSuggestions": "off",
     "editor.suggest.insertMode": "replace",
     "editor.semanticHighlighting.enabled": true
   },
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 2, ColumnLimit: 0}",
   "cmakeFormat.exePath": "/Users/minhha/.nix-profile/bin/cmake-format",
   "github.copilot.advanced": {},
-  "workbench.colorTheme": "Solarized Light"
+  "workbench.colorTheme": "Solarized Light",
+  "github.copilot.editor.enableAutoCompletions": true
 }
