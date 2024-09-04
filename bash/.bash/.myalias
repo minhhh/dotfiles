@@ -54,8 +54,10 @@ alias mis6="open -a \"iOS Simulator\""
 function d {
     builtin cd "$@" && pushd . 1> /dev/null && ls -a
 }
-alias cd-="popd 1> /dev/null"
+alias d-="popd 1> /dev/null"
 which Vim 2>&1 >/dev/null && alias vimn="Vim -u NONE -N"
+
+alias ..="d .."
 
 # edit crontab on mac
 alias crone="VIM_CRONTAB=true EDITOR=vim crontab -e"

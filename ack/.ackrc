@@ -1,1 +1,4 @@
 --type-set=md:ext:md
+--type-set=lua:ext:lua
+--type-set=cs:ext:cs
+--type-set=lisp:ext:l,lisp
