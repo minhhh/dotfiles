@@ -163,5 +163,6 @@
   "cmakeFormat.exePath": "/Users/minhha/.nix-profile/bin/cmake-format",
   "github.copilot.advanced": {},
   "workbench.colorTheme": "Solarized Light",
-  "github.copilot.editor.enableAutoCompletions": true
+  "github.copilot.editor.enableAutoCompletions": true,
+  "diffEditor.maxComputationTime": 0
 }

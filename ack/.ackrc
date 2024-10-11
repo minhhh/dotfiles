@@ -2,3 +2,4 @@
 --type-set=lua:ext:lua
 --type-set=cs:ext:cs
 --type-set=lisp:ext:l,lisp
+--type-set=csv:ext:csv
