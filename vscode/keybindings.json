@@ -2,5 +2,9 @@
     {
         "key":"cmd+shift+j",
         "command": "editor.emmet.action.matchTag"
+    },
+    {
+      "key": "cmd+f6",
+      "command": "workbench.action.focusActiveEditorGroup"
     }
 ]
