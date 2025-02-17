@@ -15,15 +15,14 @@ require "user.treesitter"
 require "user.lualine"
 require "user.surround"
 require "user.toggleterm"
-require "user.lsp"
-require "user.autocommands"
 require "user.whichkey"
-require "user.webdevicons"
 require "user.fzf"
 require "user.align"
 require "user.ack"
-
 require "user.abbr"
+require "user.webdevicons"
+require "user.lsp"
+require "user.autocommands"
 
 
 -- Not useful for now --
