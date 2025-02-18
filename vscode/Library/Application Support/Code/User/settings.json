@@ -165,5 +165,6 @@
   "workbench.colorTheme": "Solarized Light",
   "github.copilot.editor.enableAutoCompletions": true,
   "diffEditor.maxComputationTime": 0,
-  "markdown-preview-enhanced.liveUpdate": true
+  "markdown-preview-enhanced.liveUpdate": true,
+  "editor.codeActionsOnSave": {}
 }
