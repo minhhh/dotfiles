@@ -15,6 +15,8 @@ export SOURCE=<source> DEST=<dest> && export SC=$(find "$SOURCE" | wc -l | awk '
 
 rsync -azvrltd -P --recursive --stats --human-readable "$SOURCE" "$DEST"
 
+rsync -avzP -e ssh <file> user@host:/
+
 ### Generate random hash string
 
 cat /dev/urandom | LC_ALL=C tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1
