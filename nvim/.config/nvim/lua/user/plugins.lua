@@ -40,11 +40,11 @@ packer.init({
 
 -- Install your plugins here
 return packer.startup(function(use)
-    use { "wbthomason/packer.nvim", commit = "ea0cc3c59f67c440c5ff0bbe4fb9420f4350b9a3" } -- Have packer manage itself
-    use { "nvim-lua/plenary.nvim", commit = "4b7e52044bbb84242158d977a50c4cbcd85070c7" } -- Useful lua functions used by lots of plugins
-    use { "windwp/nvim-autopairs", commit = "4fc96c8f3df89b6d23e5092d31c866c53a346347" } -- Autopairs, integrates with both cmp and treesitter
-    use { "numToStr/Comment.nvim", commit = "97a188a98b5a3a6f9b1b850799ac078faa17ab67" }
-    use { "JoosepAlviste/nvim-ts-context-commentstring", commit = "4d3a68c41a53add8804f471fcc49bb398fe8de08" }
+    use { "wbthomason/packer.nvim" } -- Have packer manage itself
+    use { "nvim-lua/plenary.nvim" } -- Useful lua functions used by lots of plugins
+    use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
+    use { "numToStr/Comment.nvim" }
+    use { "JoosepAlviste/nvim-ts-context-commentstring" }
     use { "nvim-tree/nvim-web-devicons" }
     use { "nvim-tree/nvim-tree.lua" }
     use { "akinsho/bufferline.nvim" }
@@ -83,7 +83,7 @@ return packer.startup(function(use)
     use { "neovim/nvim-lspconfig" }                                                     -- enable LSP
     use { "williamboman/mason.nvim" }                                                   -- simple to use language server installer
     use { "williamboman/mason-lspconfig.nvim" }
-    use { "nvimtools/none-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" } -- for formatters and linters
+    use { "nvimtools/none-ls.nvim" } -- for formatters and linters
 
     -- Telescope
     use { "nvim-telescope/telescope.nvim" }
@@ -94,10 +94,7 @@ return packer.startup(function(use)
     use { "ibhagwan/fzf-lua" }
 
     -- Treesitter
-    use {
-        "nvim-treesitter/nvim-treesitter",
-        commit = "226c1475a46a2ef6d840af9caa0117a439465500",
-    }
+    use { "nvim-treesitter/nvim-treesitter" }
 
     -- Git
 
