@@ -89,7 +89,7 @@
   },
   "[typescript]": {
     "editor.tabSize": 2,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -166,5 +166,8 @@
   "github.copilot.editor.enableAutoCompletions": true,
   "diffEditor.maxComputationTime": 0,
   "markdown-preview-enhanced.liveUpdate": true,
-  "editor.codeActionsOnSave": {}
+  "editor.codeActionsOnSave": {},
+  "workbench.tree.enableStickyScroll": false,
+  "editor.stickyScroll.scrollWithEditor": false,
+  "editor.stickyScroll.enabled": false
 }

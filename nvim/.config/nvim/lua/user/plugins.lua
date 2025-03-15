@@ -56,8 +56,9 @@ return packer.startup(function(use)
     -- use { "goolord/alpha-nvim", commit = "0bb6fc0646bcd1cdb4639737a1cee8d6e08bcc31" } -- I don't need it
     use { "folke/which-key.nvim" }
     use { "tpope/vim-obsession" }
-    use { "mileszs/ack.vim" }
+    -- use { "mileszs/ack.vim" }
     use { "rking/ag.vim" }
+    use { "duane9/nvim-rg" }
     use { "kylechui/nvim-surround" }
     use { "echasnovski/mini.align" }
 
