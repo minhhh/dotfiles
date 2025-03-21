@@ -1,0 +1,99 @@
+# Tmux settings
+
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-yank'
+
+# tmux-resurrect
+set -g @resurrect-processes '"~vim" "~nvim"'
+set -g @resurrect-capture-pane-contents 'on'
+set -g @resurrect-strategy-vim 'session'
+set -g @resurrect-strategy-nvim 'session'
+set -g @resurrect-dir '/home/ubuntu/.tmux/resurrect'
+
+# tmux-resurrect: post save hooks
+set -g @resurrect-hook-post-save-all 'sed -i "" "/nvim/s/nvim --cmd lua [^ ]*/nvim/" /home/ubuntu/.tmux/resurrect/*.txt'
+
+#set -g default-command "reattach-to-user-namespace -l zsh"
+
+# Set XTerm key bindings
+setw -g xterm-keys on
+
+# Remap prefix to C-a
+# set -g prefix C-a
+set -g prefix Home
+# bind C-a send-prefix
+bind-key Home send-prefix
+unbind C-b
+
+# Set reload key to r
+bind r source-file ~/.tmux.conf
+
+# No delay for escape key press
+set -sg escape-time 0
+
+# Use vim bindings in copy mode too
+set -g status-keys  vi    # in the status/command prompt
+setw -g mode-keys vi
+
+# Setup 'v' to begin selection as in Vim
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi y send-keys -X copy-seletion-and-cancel
+# Update default binding of `Enter` to also use copy-pipe
+unbind -T copy-mode-vi Enter ; bind-key -T copy-mode-vi Enter send-keys -X copy-selection-and-cancel
+
+# Shift arrow to switch windows
+bind-key -r -T root         S-Left            previous-window
+bind-key -r -T root         S-Right           next-window
+
+# Meta Shift arrow to move window to the left or right
+bind-key -r -T prefix n { swap-window -t +1; next-window }
+bind-key -r -T prefix p { swap-window -t -1; previous-window }
+
+# Make new window in current path
+bind c new-window -c "#{pane_current_path}"
+bind '"' split-window -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}"
+
+# Set window title
+set -g automatic-rename on
+set -g automatic-rename-format "#(echo '#{pane_current_path}' | awk '{split($0, a, \"/\");basename=a[length(a)];cmd=\"pwd\"; cmd | getline homepath; close(cmd);baselength=length(basename);i=index($0,homepath);path=$0;if (i==1) { path=\"~\"substr(path,length(homepath)+1,length(path)); };maxlength=15; if (length(basename) > maxlength-3) { print \"../\"basename; } else if (length(path) > maxlength) {print \"..\"substr(path, length(path)-maxlength+3, length(path)) } else print path }') - #{pane_current_command}"
+
+# Count sessions start at 1
+set -g base-index 1
+set -g pane-base-index 1
+
+# Set status
+set -g status-interval 15
+set -g status-position top
+set -g repeat-time 0
+
+# Set the title bar
+set -g set-titles on
+set -g set-titles-string '#(whoami) :: #h'
+
+# Set Colors
+set-option -sa terminal-features ',XXX:RGB'
+set -g default-terminal "screen-256color"
+setw -g window-status-style fg=colour254,bg=colour102
+setw -g window-status-format '#I:#W '
+setw -g window-status-current-style fg=colour254,bg=colour64,bright
+setw -g window-status-current-format '#I:#W '
+
+# Set status bar
+set -g status-bg colour252
+set -g status-fg black
+set -g status-left-length 90
+set -g status-right-length 60
+# set -g status-left "#[fg=green]#(whoami)#[fg=black]::#[fg=blue]#(hostname -s) "
+set -g status-left "#[fg=green]#S "
+set -g status-justify left
+#set -g status-right ' #[fg=green]%a %d %b %R'
+set -g status-right ' #[fg=green]'
+setw -g mouse on
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+set-environment -g PATH "/usr/local/bin:/bin:/usr/bin:/home/ubuntu/.nix-profile/bin"
+run -b '~/.tmux/plugins/tpm/tpm'
