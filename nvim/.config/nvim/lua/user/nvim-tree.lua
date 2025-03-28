@@ -17,12 +17,15 @@ local function my_on_attach(bufnr)
     vim.keymap.del('n', 'e', { buffer = bufnr })
     vim.keymap.del('n', 'o', { buffer = bufnr })
     vim.keymap.del('n', 's', { buffer = bufnr })
+    vim.keymap.del('n', '-', { buffer = bufnr })
+
 
     -- override a default
     --vim.keymap.set('n', '<C-e>', api.tree.reload,                       opts('Refresh'))
 
     -- add your mappings
     vim.keymap.set('n', '?',     api.tree.toggle_help,                  opts('Help'))
+    vim.keymap.set("n", "=",              api.tree.change_root_to_parent,     opts("Up"))
     ---
 end
 
