@@ -1,6 +1,6 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" 1> /dev/null && pwd )"
 
-# Git related
+# Git alias
 alias mga="git add"
 alias mgau="git add -u"
 alias mgaa="git add -A"
@@ -41,11 +41,16 @@ alias mgs="git status --short --branch"
 alias mgst="git stash"
 alias mgt="git tag"
 
+# multipass alias
 alias mp="multipass"
 alias mps="multipass start"
 alias mpst="multipass stop"
 
+# dotnet alias
 alias mdr="dotnet run"
+
+# terraform alias
+alias mt="terraform"
 
 alias l="exa -lagB --time-style long-iso"
 alias ff="fzf"
