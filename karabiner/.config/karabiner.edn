@@ -68,7 +68,11 @@
         {:des "Right Control e to End" :rules [[:!We :end]]}
         {:des "Right Control h to Backspace" :rules [[:!Wb :delete_or_backspace]]}
 
-        {:des "Left Shift ~ to `" :rules [[:!Sgrave_accent_and_tilde :grave_accent_and_tilde]]}
 
-        {:des "Tilde to ESC" :rules [[:grave_accent_and_tilde :escape]]}
+        {:des "Left Shift Esc to `" :rules [[:!Sescape :grave_accent_and_tilde]]}
+        {:des "Right Shift Esc to ~" :rules [[:!Rescape :!Sgrave_accent_and_tilde]]}
+        {:des "Left Command Esc to Left Command `" :rules [[:!Cescape :!Cgrave_accent_and_tilde]]}
+
+        ;;{:des "Left Shift ~ to `" :rules [[:!Sgrave_accent_and_tilde :grave_accent_and_tilde]]}
+        ;;{:des "Tilde to ESC" :rules [[:grave_accent_and_tilde :escape]]}
   ]}
