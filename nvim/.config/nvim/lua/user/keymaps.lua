@@ -92,7 +92,7 @@ keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 keymap("i", "<F2>", "<ESC><cmd>w<CR>a", opts)
 keymap("i", "<F4>", "<cmd>q<CR><cmd>q<CR>", opts)
 -- Press jk fast to exit insert mode
-keymap("i", "jk", "<ESC>", opts)
+-- keymap("i", "jk", "<ESC>", opts)
 
 
 -- Visual mode mappings --
