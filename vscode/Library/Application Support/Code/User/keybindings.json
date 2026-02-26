@@ -6,5 +6,15 @@
     {
       "key": "cmd+f6",
       "command": "workbench.action.focusActiveEditorGroup"
+    },
+    {
+      "key": "shift+cmd+;",
+      "command": "-breadcrumbs.focus",
+      "when": "breadcrumbsPossible && breadcrumbsVisible"
+    },
+    {
+      "key": "shift+cmd+;",
+      "command": "workbench.view.extension.roo-cline-ActivityBar",
+      "when": "viewContainer.workbench.view.extension.roo-cline-ActivityBar.enabled"
     }
 ]

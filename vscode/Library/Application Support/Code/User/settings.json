@@ -81,7 +81,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[typescriptreact]": {
     "editor.tabSize": 2,
@@ -161,7 +161,6 @@
   },
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 2, ColumnLimit: 0}",
   "cmakeFormat.exePath": "/Users/minhha/.nix-profile/bin/cmake-format",
-  "github.copilot.advanced": {},
   "workbench.colorTheme": "Solarized Light",
   "github.copilot.editor.enableAutoCompletions": true,
   "diffEditor.maxComputationTime": 0,
@@ -169,5 +168,12 @@
   "editor.codeActionsOnSave": {},
   "workbench.tree.enableStickyScroll": false,
   "editor.stickyScroll.scrollWithEditor": false,
-  "editor.stickyScroll.enabled": false
+  "editor.stickyScroll.enabled": false,
+  "roo-cline.debug": false,
+  "roo-cline.allowedCommands": [
+    "git log",
+    "git diff",
+    "git show"
+  ],
+  "roo-cline.deniedCommands": []
 }

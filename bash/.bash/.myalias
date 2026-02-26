@@ -84,3 +84,109 @@ mux() {
     done) &&\
     tmux attach || tmux attach
 }
+
+# Commit by gemini
+function gcommit() {
+  diff=$(git diff --staged)
+  if [ -z "$diff" ]; then echo "No staged changes."; return 1; fi
+
+  # Generate message and commit
+  msg=$(echo "$diff" | gemini "Write a concise Conventional Commit message for this. Output ONLY the message.")
+  git commit -m "$msg"
+}
+
+# Create PR by gemini
+gpr() {
+  # 1. Config
+  local BASE_BRANCH=${1:-main}
+  local CURRENT_BRANCH=$(git branch --show-current)
+
+  # 2. Safety Check
+  if [[ "$CURRENT_BRANCH" == "$BASE_BRANCH" ]]; then
+    echo "❌ Error: You are on the base branch ($BASE_BRANCH). Move to a feature branch."
+    return 1
+  fi
+
+  # 3. Push to remote (required for 'gh pr create')
+  echo "🚀 Pushing branch to origin..."
+  git push -u origin "$CURRENT_BRANCH"
+
+  # 4. Context Gathering
+  # We use the commit messages since branching off BASE_BRANCH
+  local LOGS=$(git log ${BASE_BRANCH}..HEAD --oneline)
+  
+  if [[ -z "$LOGS" ]]; then
+    echo "❌ No new commits found."
+    return 1
+  fi
+
+  echo "🧠 Gemini is drafting the PR description..."
+
+  # 5. Generate Title & Body
+  # We ask for a specific format to make parsing easy
+  local PROMPT="Analyze these commits and generate a PR title and markdown body. 
+Output format:
+TITLE: <title>
+BODY:
+<body>
+
+Commits:
+$LOGS"
+
+  local AI_OUTPUT=$(gemini -p "$PROMPT")
+
+  # 6. Parse Output
+  local PR_TITLE=$(echo "$AI_OUTPUT" | grep "^TITLE:" | sed 's/^TITLE: //')
+  local PR_BODY=$(echo "$AI_OUTPUT" | sed -n '/^BODY:/,$p' | sed '1d')
+
+  # 7. Create PR via GitHub CLI
+  echo "📝 Creating PR: $PR_TITLE"
+  gh pr create --title "$PR_TITLE" --body "$PR_BODY" --base "$BASE_BRANCH"
+}
+
+# Create MR by gemini (GitLab)
+glpr() {
+  # 1. Config
+  local BASE_BRANCH=${1:-main}
+  local CURRENT_BRANCH=$(git branch --show-current)
+
+  # 2. Safety Check
+  if [[ "$CURRENT_BRANCH" == "$BASE_BRANCH" ]]; then
+    echo "❌ Error: You are on the base branch ($BASE_BRANCH). Move to a feature branch."
+    return 1
+  fi
+
+  # 3. Push to remote (required for 'glab mr create')
+  echo "🚀 Pushing branch to origin..."
+  git push -u origin "$CURRENT_BRANCH"
+
+  # 4. Context Gathering
+  local LOGS=$(git log ${BASE_BRANCH}..HEAD --oneline)
+  
+  if [[ -z "$LOGS" ]]; then
+    echo "❌ No new commits found."
+    return 1
+  fi
+
+  echo "🧠 Gemini is drafting the MR description..."
+
+  # 5. Generate Title & Body
+  local PROMPT="Analyze these commits and generate a MR title and markdown body. 
+Output format:
+TITLE: <title>
+BODY:
+<body>
+
+Commits:
+$LOGS"
+
+  local AI_OUTPUT=$(gemini -p "$PROMPT")
+
+  # 6. Parse Output
+  local MR_TITLE=$(echo "$AI_OUTPUT" | grep "^TITLE:" | sed 's/^TITLE: //')
+  local MR_BODY=$(echo "$AI_OUTPUT" | sed -n '/^BODY:/,$p' | sed '1d')
+
+  # 7. Create MR via GitLab CLI
+  echo "📝 Creating MR: $MR_TITLE"
+  glab mr create --title "$MR_TITLE" --description "$MR_BODY" --target-branch "$BASE_BRANCH"
+}
