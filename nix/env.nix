@@ -1,4 +1,5 @@
 with import <nixpkgs> {}; [
+    rclone
     premake5
     fd
     neovim
@@ -20,7 +21,6 @@ with import <nixpkgs> {}; [
     ffmpeg_6
     figlet
     flex
-    go
     goku
     guile_3_0
     htop
@@ -42,7 +42,7 @@ with import <nixpkgs> {}; [
     nasm
     postgresql
     optipng
-    fastlane
+    #fastlane
     ncurses
     redis
     rsync
@@ -53,14 +53,12 @@ with import <nixpkgs> {}; [
     p7zip
     hashdeep
     pandoc
-    racket
     slack
     tmux
     curl
-    xquartz
+    #xquartz
     imagemagick
     gtk2
-    rclone
     libuv
     zoxide
 ]
