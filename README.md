@@ -1,8 +1,8 @@
-# 󰌃 Dotfiles
+# Dotfiles
 
 > My personal dotfiles for macOS/Linux - Neovim, Tmux, Bash, Karabiner, and more.
 
-## 󰒲 Installation
+## ⚡ Installation
 
 ### 1. Install GNU Stow
 
@@ -37,22 +37,22 @@ stow karabiner
 stow */
 ```
 
-## 󰌢 What's Included
+## 📦 What's Included
 
 | Tool | Description |
 |------|-------------|
-| 󰌃 nvim | Neovim with Lua, LSP, treesitter, cmp, and more |
-| 󰤈 Tmux | Terminal multiplexer configuration |
-| 󰉖 Bash | Shell aliases and functions |
-| 󰌨 Karabiner | Keyboard remapping for macOS |
-| 󰡦 Emacs | Editor configuration |
-| 󰟊 Sublime Text | Keymaps and snippets |
-| 󰌹 WeeChat | IRC client theming |
-| 󰕧 Ack | Search configuration |
-| 󰌽 Screen | Screenrc configuration |
-| 󰌜 Nix | Nix environment configuration |
+| nvim | Neovim with Lua, LSP, treesitter, cmp, and more |
+| Tmux | Terminal multiplexer configuration |
+| Bash | Shell aliases and functions |
+| Karabiner | Keyboard remapping for macOS |
+| Emacs | Editor configuration |
+| Sublime Text | Keymaps and snippets |
+| WeeChat | IRC client theming |
+| Ack | Search configuration |
+| Screen | Screenrc configuration |
+| Nix | Nix environment configuration |
 
-## 󰌢 Shell Setup
+## 🔧 Shell Setup
 
 Add the following to your `.bashrc` or `.zshrc`:
 
@@ -60,7 +60,7 @@ Add the following to your `.bashrc` or `.zshrc`:
 [[ -f ~/.bash/.mybash ]] && source ~/.bash/.mybash
 ```
 
-## 󰌢 Development Tips
+## 💡 Development Tips
 
 ### Vim Sessions with Tmux
 
@@ -76,6 +76,6 @@ Add the following to your `.bashrc` or `.zshrc`:
 */5 * * * * (cd /path/to/repo && (git add -u && git commit -m "update") || echo "" && git pull --rebase && git push)
 ```
 
-## 󰌢 License
+## License
 
 MIT
