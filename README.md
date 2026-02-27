@@ -1,47 +1,81 @@
-INTRODUCTION
-============
+# 󰌃 Dotfiles
 
-Install stow
-```
-    sudo pacman -S stow
-    sudo apt-get install stow
-    brew install stow
-```
+> My personal dotfiles for macOS/Linux - Neovim, Tmux, Bash, Karabiner, and more.
 
-Checkout this repo to .dotfiles
+## 󰒲 Installation
 
-```
-    git clone git@github.com:minhhh/dotfiles.git .dotfiles
-```
+### 1. Install GNU Stow
 
-## Install bash
-```
-    cd ~/.dotfiles
-    stow bash
+```bash
+# macOS
+brew install stow
+
+# Arch Linux
+sudo pacman -S stow
+
+# Ubuntu/Debian
+sudo apt-get install stow
 ```
 
-Add the following line to your `.bashrc` or `.bash_profile`
+### 2. Clone the Repository
 
-    [[ -f ~/.bash/.mybash ]] && . ~/.bash/.mybash
-
-
-CONVENIENT SETUP FOR DEV ENVIRONMENT
-============
-
-## Use vim Obsession
-
-* To use Tmux with Vim sessions
-    * Open vim
-    * Use `:Obssession` to create a session file
-    * Create `~/.vim/sessions` folder, and move the session file there
-    * Open vim again with `vim -S /Users/<username>/.vim/session/<session_name>.vim`
-    * Now next time you open tmux vim will reopen the previous session
-
-## Use Crontab to commit common repos
-
-You can add something like this to crontab to commit every 5 minutes.
-
-```
-*/5 * * * * (cd /pathtorepo && (git add -u && git commit -m "update") || echo "" && git pull --rebase && git push)
+```bash
+git clone git@github.com:minhhh/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
 ```
 
+### 3. Install Configurations
+
+```bash
+# Install specific configs
+stow bash
+stow nvim
+stow tmux
+stow karabiner
+
+# Or install all
+stow */
+```
+
+## 󰌢 What's Included
+
+| Tool | Description |
+|------|-------------|
+| 󰌃 nvim | Neovim with Lua, LSP, treesitter, cmp, and more |
+| 󰤈 Tmux | Terminal multiplexer configuration |
+| 󰉖 Bash | Shell aliases and functions |
+| 󰌨 Karabiner | Keyboard remapping for macOS |
+| 󰡦 Emacs | Editor configuration |
+| 󰟊 Sublime Text | Keymaps and snippets |
+| 󰌹 WeeChat | IRC client theming |
+| 󰕧 Ack | Search configuration |
+| 󰌽 Screen | Screenrc configuration |
+| 󰌜 Nix | Nix environment configuration |
+
+## 󰌢 Shell Setup
+
+Add the following to your `.bashrc` or `.zshrc`:
+
+```bash
+[[ -f ~/.bash/.mybash ]] && source ~/.bash/.mybash
+```
+
+## 󰌢 Development Tips
+
+### Vim Sessions with Tmux
+
+1. Open vim and use `:Obsession` to create a session file
+2. Create `~/.vim/sessions` folder and move the session file there
+3. Open vim with: `vim -S ~/.vim/sessions/<session_name>.vim`
+4. Vim will restore the session when opened from tmux
+
+### Auto-commit Repos with Crontab
+
+```bash
+# Add to crontab to commit every 5 minutes
+*/5 * * * * (cd /path/to/repo && (git add -u && git commit -m "update") || echo "" && git pull --rebase && git push)
+```
+
+## 󰌢 License
+
+MIT
