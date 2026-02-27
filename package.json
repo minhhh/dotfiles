@@ -9,10 +9,22 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "commitizen": "4.1.2",
-    "cz-conventional-changelog": "3.2.0"
+    "commitizen": "4.3.1",
+    "cz-conventional-changelog": "3.3.0"
   },
   "dependencies": {},
+  "resolutions": {
+    "lodash": "^4.17.23",
+    "minimatch": "^3.1.2",
+    "tmp": "^0.2.4",
+    "minimist": "^1.2.6",
+    "braces": "^3.0.3",
+    "micromatch": "^4.0.8",
+    "ansi-regex": "^5.0.1",
+    "word-wrap": "^1.2.4",
+    "brace-expansion": "^1.1.12",
+    "merge": "^2.1.1"
+  },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
