@@ -16,7 +16,7 @@
         "stdio"
       ],
       "env": {
-        "EXCEL_FILES_PATH": "/Users/minh"
+        "EXCEL_FILES_PATH": "/Users/minh/gitrepos"
       }
     }
   },
