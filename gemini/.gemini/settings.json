@@ -9,7 +9,7 @@
     "enabled": true
   },
   "mcpServers": {
-    "local-excel-new": {
+    "local-excel": {
       "command": "uvx",
       "args": [
         "excel-mcp-server",
