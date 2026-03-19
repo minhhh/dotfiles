@@ -175,5 +175,6 @@
     "git diff",
     "git show"
   ],
-  "roo-cline.deniedCommands": []
+  "roo-cline.deniedCommands": [],
+  "github.copilot.nextEditSuggestions.eagerness": "low"
 }

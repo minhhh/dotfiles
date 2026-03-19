@@ -11,8 +11,17 @@
         "glm-4.7:cloud": {
           "name": "glm-4.7:cloud"
         },
+        "glm-5:cloud": {
+          "name": "glm-5:cloud"
+        },
         "minimax-m2.5:cloud": {
           "name": "minimax-m2.5:cloud"
+        },
+        "minimax-m2.7:cloud": {
+          "name": "minimax-m2.7:cloud"
+        },
+        "qwen3.5:cloud": {
+          "name": "qwen3.5:cloud"
         }
       }
     }
