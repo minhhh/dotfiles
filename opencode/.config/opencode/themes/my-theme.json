@@ -105,11 +105,11 @@
     },
     "diffAddedBg": {
       "dark": "#3B4252",
-      "light": "#70B9D0"
+      "light": "#6C9390"
     },
     "diffRemovedBg": {
       "dark": "#3B4252",
-      "light": "#70B9D0"
+      "light": "#936C6F"
     },
     "diffContextBg": {
       "dark": "nord1",
@@ -121,11 +121,11 @@
     },
     "diffAddedLineNumberBg": {
       "dark": "#3B4252",
-      "light": "#70B9D0"
+      "light": "#6C9390"
     },
     "diffRemovedLineNumberBg": {
       "dark": "#3B4252",
-      "light": "#70B9D0"
+      "light": "#936C6F"
     },
     "markdownText": {
       "dark": "nord4",
