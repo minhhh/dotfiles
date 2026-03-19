@@ -1,0 +1,29 @@
+{
+  "mcpServers": {
+    "local-n8n-mcp": {
+      "command": "npx",
+      "args": [
+        "n8n-mcp"
+      ],
+      "env": {
+        "MCP_MODE": "stdio",
+        "LOG_LEVEL": "error",
+        "DISABLE_CONSOLE_OUTPUT": "true",
+        "N8N_API_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3ZGYxZTY3NC0xMjZmLTQ5M2MtOWMxMi1jMDhjNjA4ZTlmYTIiLCJpc3MiOiJuOG4iLCJhdWQiOiJwdWJsaWMtYXBpIiwianRpIjoiMDg1NGM3OWItNzE5NC00NzBlLWFiMGUtYWRmMWUxMjRhMGZiIiwiaWF0IjoxNzcxMDk1MzExLCJleHAiOjE3NzM2MzM2MDB9.D628tPkgOUsvJ08Rch1ZmxGtVjfZtetaAdAddOdufLA",
+        "N8N_API_URL": "http://localhost:5678/api/v1"
+      },
+      "disabled": true
+    },
+    "local-excel": {
+      "command": "uvx",
+      "args": [
+        "excel-mcp-server",
+        "stdio"
+      ],
+      "env": {
+        "EXCEL_FILES_PATH": "/Users/minh/gitrepos"
+      },
+      "disabled": true
+    }
+  }
+}
