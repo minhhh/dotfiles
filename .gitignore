@@ -10,4 +10,9 @@ node_modules
 yarn-error.log
 /.Trash*
 .vscode
+vscode/Library/Application Support/Code/.com.microsoft.VSCode.*
+vscode/Library/Application Support/Code/DIPS
+vscode/Library/Application Support/Code/DIPS-wal
+vscode/Library/Application Support/Code/User/chatLanguageModels.json
+vscode/Library/Application Support/Code/blob_storage/
 *.swp
