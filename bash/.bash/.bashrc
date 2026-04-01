@@ -9,3 +9,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 eval "$(zoxide init bash)"
 
 export PATH="$PATH:$HOME/go/bin"
+
+# OpenClaw Completion
+source "~/.openclaw/completions/openclaw.bash"
