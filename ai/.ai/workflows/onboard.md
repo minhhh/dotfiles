@@ -1,5 +1,6 @@
 ---
-description: Summarize the stack and entry points for the codebase
+name: onboard
+description: Summarize the stack, entry points, and architecture of a codebase for quick orientation
 ---
 
 **Discovery Phase** (run these in parallel):

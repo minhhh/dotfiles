@@ -1,5 +1,6 @@
 ---
-description: Deconstruct incrementally
+name: deconstruct
+description: Incrementally deconstruct the codebase into a detailed reference document
 ---
 
 Objective:
@@ -32,8 +33,7 @@ Documentation Phase:
   - Specific Features: A mapping of business features to code locations.
   - Configurations: How the system is tuned and where secrets/env vars live.
   - Testing: The verification strategy and key test suites.
-* Incremental Report: If deconstructed.md exists, integrate new findings into the existing sections. Use "New
- Discovery" tags if the information contradicts or significantly expands previous entries.
+* Incremental Report: If deconstructed.md exists, integrate new findings into the existing sections. Use "New Discovery" tags if the information contradicts or significantly expands previous entries.
 
 
 Operational Guidelines:

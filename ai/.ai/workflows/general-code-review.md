@@ -1,5 +1,6 @@
 ---
-description: Comprehensive Automated Code Review
+name: general-code-review
+description: Conduct a comprehensive automated code review analyzing logic, security, performance, and architecture
 ---
 
 # Role
