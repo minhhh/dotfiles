@@ -3,7 +3,7 @@
   "provider": {
     "ollama": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "Ollama Cloud",
+      "name": "ollama_cloud",
       "options": {
         "baseURL": "http://127.0.0.1:11434/v1"
       },
