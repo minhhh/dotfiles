@@ -19,205 +19,55 @@
     "nord15": "#B48EAD"
   },
   "theme": {
-    "primary": {
-      "dark": "nord8",
-      "light": "nord10"
-    },
-    "secondary": {
-      "dark": "nord9",
-      "light": "nord9"
-    },
-    "accent": {
-      "dark": "nord7",
-      "light": "nord7"
-    },
-    "error": {
-      "dark": "nord11",
-      "light": "nord11"
-    },
-    "warning": {
-      "dark": "nord12",
-      "light": "nord12"
-    },
-    "success": {
-      "dark": "nord14",
-      "light": "nord14"
-    },
-    "info": {
-      "dark": "nord8",
-      "light": "nord10"
-    },
-    "text": {
-      "dark": "nord4",
-      "light": "nord0"
-    },
-    "textMuted": {
-      "dark": "nord3",
-      "light": "nord1"
-    },
-    "background": {
-      "dark": "nord0",
-      "light": "nord6"
-    },
-    "backgroundPanel": {
-      "dark": "nord1",
-      "light": "nord5"
-    },
-    "backgroundElement": {
-      "dark": "nord1",
-      "light": "nord4"
-    },
-    "border": {
-      "dark": "nord2",
-      "light": "nord3"
-    },
-    "borderActive": {
-      "dark": "nord3",
-      "light": "nord2"
-    },
-    "borderSubtle": {
-      "dark": "nord2",
-      "light": "nord3"
-    },
-    "diffAdded": {
-      "dark": "nord14",
-      "light": "nord14"
-    },
-    "diffRemoved": {
-      "dark": "nord11",
-      "light": "nord11"
-    },
-    "diffContext": {
-      "dark": "nord3",
-      "light": "nord3"
-    },
-    "diffHunkHeader": {
-      "dark": "nord3",
-      "light": "nord3"
-    },
-    "diffHighlightAdded": {
-      "dark": "nord14",
-      "light": "nord14"
-    },
-    "diffHighlightRemoved": {
-      "dark": "nord11",
-      "light": "nord11"
-    },
-    "diffAddedBg": {
-      "dark": "#3B4252",
-      "light": "#6C9390"
-    },
-    "diffRemovedBg": {
-      "dark": "#3B4252",
-      "light": "#936C6F"
-    },
-    "diffContextBg": {
-      "dark": "nord1",
-      "light": "nord5"
-    },
-    "diffLineNumber": {
-      "dark": "nord2",
-      "light": "nord4"
-    },
-    "diffAddedLineNumberBg": {
-      "dark": "#3B4252",
-      "light": "#6C9390"
-    },
-    "diffRemovedLineNumberBg": {
-      "dark": "#3B4252",
-      "light": "#936C6F"
-    },
-    "markdownText": {
-      "dark": "nord4",
-      "light": "nord0"
-    },
-    "markdownHeading": {
-      "dark": "nord8",
-      "light": "nord10"
-    },
-    "markdownLink": {
-      "dark": "nord9",
-      "light": "nord9"
-    },
-    "markdownLinkText": {
-      "dark": "nord7",
-      "light": "nord7"
-    },
-    "markdownCode": {
-      "dark": "nord14",
-      "light": "nord14"
-    },
-    "markdownBlockQuote": {
-      "dark": "nord3",
-      "light": "nord3"
-    },
-    "markdownEmph": {
-      "dark": "nord12",
-      "light": "nord12"
-    },
-    "markdownStrong": {
-      "dark": "nord13",
-      "light": "nord13"
-    },
-    "markdownHorizontalRule": {
-      "dark": "nord3",
-      "light": "nord3"
-    },
-    "markdownListItem": {
-      "dark": "nord8",
-      "light": "nord10"
-    },
-    "markdownListEnumeration": {
-      "dark": "nord7",
-      "light": "nord7"
-    },
-    "markdownImage": {
-      "dark": "nord9",
-      "light": "nord9"
-    },
-    "markdownImageText": {
-      "dark": "nord7",
-      "light": "nord7"
-    },
-    "markdownCodeBlock": {
-      "dark": "nord4",
-      "light": "nord0"
-    },
-    "syntaxComment": {
-      "dark": "nord3",
-      "light": "nord3"
-    },
-    "syntaxKeyword": {
-      "dark": "nord9",
-      "light": "nord9"
-    },
-    "syntaxFunction": {
-      "dark": "nord8",
-      "light": "nord8"
-    },
-    "syntaxVariable": {
-      "dark": "nord7",
-      "light": "nord7"
-    },
-    "syntaxString": {
-      "dark": "nord14",
-      "light": "nord14"
-    },
-    "syntaxNumber": {
-      "dark": "nord15",
-      "light": "nord15"
-    },
-    "syntaxType": {
-      "dark": "nord7",
-      "light": "nord7"
-    },
-    "syntaxOperator": {
-      "dark": "nord9",
-      "light": "nord9"
-    },
-    "syntaxPunctuation": {
-      "dark": "nord4",
-      "light": "nord0"
-    }
+    "primary": "nord10",
+    "secondary": "nord9",
+    "accent": "nord7",
+    "error": "nord11",
+    "warning": "nord12",
+    "success": "nord14",
+    "info": "nord10",
+    "text": "nord0",
+    "textMuted": "nord1",
+    "background": "nord6",
+    "backgroundPanel": "nord5",
+    "backgroundElement": "nord4",
+    "border": "nord3",
+    "borderActive": "nord2",
+    "borderSubtle": "nord3",
+    "diffAdded": "nord14",
+    "diffRemoved": "nord11",
+    "diffContext": "nord3",
+    "diffHunkHeader": "nord3",
+    "diffHighlightAdded": "nord14",
+    "diffHighlightRemoved": "nord11",
+    "diffAddedBg": "#6C9390",
+    "diffRemovedBg": "#936C6F",
+    "diffContextBg": "nord5",
+    "diffLineNumber": "nord4",
+    "diffAddedLineNumberBg": "#6C9390",
+    "diffRemovedLineNumberBg": "#936C6F",
+    "markdownText": "nord0",
+    "markdownHeading": "nord10",
+    "markdownLink": "nord9",
+    "markdownLinkText": "nord7",
+    "markdownCode": "nord14",
+    "markdownBlockQuote": "nord3",
+    "markdownEmph": "nord12",
+    "markdownStrong": "nord13",
+    "markdownHorizontalRule": "nord3",
+    "markdownListItem": "nord10",
+    "markdownListEnumeration": "nord7",
+    "markdownImage": "nord9",
+    "markdownImageText": "nord7",
+    "markdownCodeBlock": "nord0",
+    "syntaxComment": "nord3",
+    "syntaxKeyword": "nord9",
+    "syntaxFunction": "nord8",
+    "syntaxVariable": "nord7",
+    "syntaxString": "nord14",
+    "syntaxNumber": "nord15",
+    "syntaxType": "nord7",
+    "syntaxOperator": "nord9",
+    "syntaxPunctuation": "nord0"
   }
 }
