@@ -50,5 +50,17 @@
       "grep *": "allow",
       "gemini *": "allow"
     },
+  },
+  "mcp": {
+    "rtfm": {
+      "type": "local",
+      "command": [
+        "rtfm-serve"
+      ],
+      "environment": {
+        "RTFM_DB": ".rtfm/library.db"
+      },
+      "enabled": true
+    }
   }
 }

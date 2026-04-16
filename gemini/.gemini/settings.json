@@ -18,6 +18,17 @@
       "env": {
         "EXCEL_FILES_PATH": "/Users/minh/gitrepos"
       }
+    },
+    "rtfm": {
+      "command": "rtfm-serve",
+      "args": [],
+      "env": {
+        "RTFM_DB": ".rtfm/library.db"
+      }
+    },
+    "code-review-graph": {
+      "command": "uvx",
+      "args": ["code-review-graph", "serve"]
     }
   },
   "ui": {
