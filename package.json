@@ -14,8 +14,8 @@
     "commitizen": "4.3.1",
     "cz-conventional-changelog": "3.3.0"
   },
-  "resolutions": {
-    "lodash": "^4.17.23",
+  "overrides": {
+    "lodash": "^4.18.0",
     "minimatch": "^3.1.2",
     "tmp": "^0.2.4",
     "minimist": "^1.2.6",
@@ -23,7 +23,8 @@
     "micromatch": "^4.0.8",
     "ansi-regex": "^5.0.1",
     "word-wrap": "^1.2.4",
-    "brace-expansion": "^1.1.12",
+    "brace-expansion": "^1.1.13",
+    "picomatch": "^2.3.2",
     "merge": "^2.1.1"
   },
   "config": {
