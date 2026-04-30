@@ -58,9 +58,13 @@
         "rtfm-serve"
       ],
       "environment": {
-        "RTFM_DB": ".rtfm/library.db"
+        "RTFM_ROOT": "/Users/minh/gitrepos"
       },
       "enabled": true
+    },
+    "code-review-graph": {
+      "type": "local",
+      "command": ["uvx", "code-review-graph", "serve"]
     }
   }
 }
