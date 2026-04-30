@@ -91,7 +91,7 @@ function gcommit() {
   if [ -z "$diff" ]; then echo "No staged changes."; return 1; fi
 
   # Generate message and commit
-  msg=$(echo "$diff" | gemini "Write a concise Conventional Commit message for this. Output ONLY the message.")
+  msg=$(echo "$diff" | gemini --skip-trust "Write a concise Conventional Commit message for this. Output ONLY the message.")
   git commit -m "$msg"
 }
 
