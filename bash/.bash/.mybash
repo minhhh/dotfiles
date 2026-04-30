@@ -1,33 +1,27 @@
 MYBASH_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-export PS1="\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;35m\]\W \[\033[01;34m\]\u\[\033[00m\]\$ "
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 export PATH=/usr/local/sbin/:$PATH
 export PATH="$PATH:$HOME/.local/bin"
-export PATH=$HOME/.cargo/bin:$PATH
 export PATH="$HOME/.nix-profile/bin:$PATH"
 export PATH="$PATH:$HOME/bin"
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export ANDROID_SDK=$HOME/Library/Android/sdk
-export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$ANDROID_SDK
-export NDK_ROOT=$HOME/android-ndk-r10d
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden -g \!**/node_modules/* -g \!**/.git/*'
 export FZF_DEFAULT_OPTS='--bind ctrl-n:page-down,ctrl-p:page-up'
 
+export PS1="\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;35m\]\W \[\033[01;34m\]\u\[\033[00m\]\$ "
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export HISTFILESIZE=5000
 
-[[ -s "$MYBASH_DIR/.myalias" ]] && source "$MYBASH_DIR/.myalias"
-
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
-# List my alias and common commands
-alias cm='[[ -s "$MYBASH_DIR/.cc" ]] && cat "$MYBASH_DIR/.cc"'
-
 # Disable Ctrl S remap
 stty stop undef
+
+# alias
+[[ -s "$MYBASH_DIR/.myalias" ]] && source "$MYBASH_DIR/.myalias"
+alias cm='[[ -s "$MYBASH_DIR/.cc" ]] && cat "$MYBASH_DIR/.cc"'
