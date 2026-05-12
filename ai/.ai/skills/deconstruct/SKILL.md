@@ -18,10 +18,10 @@ Discovery Phase (run these in parallel):
 
 Use the following format to document flow
 * Class.cs
-    -> leaderboardView: Show leaderboards in minigames
-        -> populateLeaderboard(leaderboard:LeaderboardData, topCount:Int, ?filter:LeaderboardFilter):Void
-            -> LeaderboardManager::info(data:LeaderboardData, topCount:Int, destroyer:Destroyer) : ServerRequest<LeaderboardInfo>
-                -> Call server endpoint `v2/leaderboard/info`
+    -> function1: do something related to function 1
+        -> populateDatabase(data:LeaderboardData, top:Int, ?filter:Filter):Void
+            -> DatabaseManager::update(data:LeaderboardData, top:Int) : ServerRequest<Data>
+                -> Call server endpoint `v2/db/update`
 
 
 Documentation Phase:
