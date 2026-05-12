@@ -45,14 +45,3 @@ Analyze the provided code for logic, security, performance, and architectural al
 3. Refactorings (Medium Impact): Improvements for performance, readability, or architectural alignment.
 4. Questions/Inquiries: Non-directive questions to understand the developer's intent (e.g., "Was [X] chosen over [Y] for a specific performance reason?"). DO NOT ASK trivial issues, only those related to Critical Issues. It's ok to leave this section empty
 
-
-
-
-
-
-
-
-
-
-
-
