@@ -97,6 +97,16 @@ function gcommit() {
 
 # Create PR by gemini
 gpr() {
+  # 0. Check dependencies
+  if ! command -v gemini &>/dev/null; then
+    echo "❌ Error: gemini-cli not found. Install from https://github.com/google-gemini/gemini-cli"
+    return 1
+  fi
+  if ! command -v jq &>/dev/null; then
+    echo "❌ Error: jq not found. Install via: brew install jq"
+    return 1
+  fi
+
   # 1. Config
   local BASE_BRANCH=${1:-main}
   local CURRENT_BRANCH=$(git branch --show-current)
@@ -114,17 +124,15 @@ gpr() {
   # 4. Context Gathering
   # We use the commit messages since branching off BASE_BRANCH
   local LOGS=$(git log ${BASE_BRANCH}..HEAD --oneline)
-  
+
   if [[ -z "$LOGS" ]]; then
     echo "❌ No new commits found."
     return 1
   fi
 
-  echo "🧠 Gemini is drafting the PR description..."
-
   # 5. Generate Title & Body
   # We ask for a specific format to make parsing easy
-  local PROMPT="Analyze these commits and generate a PR title and markdown body. 
+  local PROMPT="Analyze these commits and generate a PR title and markdown body.
 Output format:
 TITLE: <title>
 BODY:
@@ -133,11 +141,17 @@ BODY:
 Commits:
 $LOGS"
 
-  local AI_OUTPUT=$(gemini -p "$PROMPT")
+  local AI_OUTPUT=$(GEMINI_YOLO_MODE=true gemini -y --skip-trust -p "$PROMPT")
 
   # 6. Parse Output
   local PR_TITLE=$(echo "$AI_OUTPUT" | grep "^TITLE:" | sed 's/^TITLE: //')
   local PR_BODY=$(echo "$AI_OUTPUT" | sed -n '/^BODY:/,$p' | sed '1d')
+
+  if [[ -z "$PR_TITLE" ]]; then
+    echo "❌ Error: Failed to parse PR title from Gemini response"
+    echo "Raw output: $AI_OUTPUT"
+    return 1
+  fi
 
   # 7. Create PR via GitHub CLI
   echo "📝 Creating PR: $PR_TITLE"
@@ -180,7 +194,7 @@ BODY:
 Commits:
 $LOGS"
 
-  local AI_OUTPUT=$(gemini -p "$PROMPT")
+  local AI_OUTPUT=$(gemini --yolo -p "$PROMPT")
 
   # 6. Parse Output
   local MR_TITLE=$(echo "$AI_OUTPUT" | grep "^TITLE:" | sed 's/^TITLE: //')
