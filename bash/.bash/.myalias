@@ -166,7 +166,7 @@ $LOGS"
 
   # 8. Create PR via GitHub CLI
   echo "📝 Creating PR: $PR_TITLE"
-  gh pr create --title "$PR_TITLE" --body "$PR_BODY" --base "$BASE_BRANCH"
+  # gh pr create --title "$PR_TITLE" --body "$PR_BODY" --base "$BASE_BRANCH"
 }
 
 # Create MR by gemini (GitLab)
