@@ -87,11 +87,11 @@ mux() {
 
 # Commit by gemini
 function gcommit() {
-  diff=$(git diff --staged)
+  diff=$(git diff --staged --stat)
   if [ -z "$diff" ]; then echo "No staged changes."; return 1; fi
 
   # Generate message and commit
-  msg=$(echo "$diff" | gemini --skip-trust "Write a concise Conventional Commit message for this. Output ONLY the message.")
+  msg=$(GEMINI_YOLO_MODE=true gemini -y --skip-trust "Write a concise Conventional Commit message for the changes in this repo. Output ONLY the message.")
   git commit -m "$msg"
 }
 
