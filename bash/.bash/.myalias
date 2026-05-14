@@ -130,43 +130,32 @@ gpr() {
     return 1
   fi
 
-  # 5. Create temp schema file
-  local SCHEMA_FILE=$(mktemp)
-  cat > "$SCHEMA_FILE" << 'EOF'
-{
-  "type": "object",
-  "properties": {
-    "title": {"type": "string", "description": "PR title, concise and descriptive"},
-    "body": {"type": "string", "description": "PR body in markdown format"}
-  },
-  "required": ["title", "body"]
-}
-EOF
-
-  echo "🧠 Gemini is drafting the PR description..."
-
-  # 6. Generate Title & Body with structured output
-  local PROMPT="Analyze these commits and generate a PR title and description in markdown.
+  # 5. Generate Title & Body
+  # We ask for a specific format to make parsing easy
+  local PROMPT="Analyze these commits and generate a PR title and markdown body.
+Output format:
+TITLE: <title>
+BODY:
+<body>
 
 Commits:
 $LOGS"
 
-  local AI_OUTPUT=$(gemini --schema-file "$SCHEMA_FILE" -p "$PROMPT")
-  rm -f "$SCHEMA_FILE"
+  local AI_OUTPUT=$(GEMINI_YOLO_MODE=true gemini -y --skip-trust -p "$PROMPT")
 
-  # 7. Parse JSON output with jq
-  local PR_TITLE=$(echo "$AI_OUTPUT" | jq -r '.response' | jq -r '.title')
-  local PR_BODY=$(echo "$AI_OUTPUT" | jq -r '.response' | jq -r '.body')
+  # 6. Parse Output
+  local PR_TITLE=$(echo "$AI_OUTPUT" | grep "^TITLE:" | sed 's/^TITLE: //')
+  local PR_BODY=$(echo "$AI_OUTPUT" | sed -n '/^BODY:/,$p' | sed '1d')
 
-  if [[ -z "$PR_TITLE" || "$PR_TITLE" == "null" ]]; then
+  if [[ -z "$PR_TITLE" ]]; then
     echo "❌ Error: Failed to parse PR title from Gemini response"
     echo "Raw output: $AI_OUTPUT"
     return 1
   fi
 
-  # 8. Create PR via GitHub CLI
+  # 7. Create PR via GitHub CLI
   echo "📝 Creating PR: $PR_TITLE"
-  # gh pr create --title "$PR_TITLE" --body "$PR_BODY" --base "$BASE_BRANCH"
+  gh pr create --title "$PR_TITLE" --body "$PR_BODY" --base "$BASE_BRANCH"
 }
 
 # Create MR by gemini (GitLab)
@@ -205,7 +194,7 @@ BODY:
 Commits:
 $LOGS"
 
-  local AI_OUTPUT=$(gemini -p "$PROMPT")
+  local AI_OUTPUT=$(gemini --yolo -p "$PROMPT")
 
   # 6. Parse Output
   local MR_TITLE=$(echo "$AI_OUTPUT" | grep "^TITLE:" | sed 's/^TITLE: //')
