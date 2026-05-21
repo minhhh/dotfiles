@@ -85,17 +85,24 @@ mux() {
     tmux attach || tmux attach
 }
 
-# Commit by gemini
-function gcommit() {
+# Commit by antigravity
+function acommit() {
   diff=$(git diff --staged --stat)
   if [ -z "$diff" ]; then echo "No staged changes."; return 1; fi
 
   # Generate message and commit
-  msg=$(GEMINI_YOLO_MODE=true gemini -y --skip-trust "Write a concise Conventional Commit message for the changes in this repo. Output ONLY the message.")
+  local PROMPT="Write a concise Conventional Commit message for the staged changes in the git repo at $(pwd). Output ONLY the raw message with no markdown, no backticks, no code blocks, and no extra formatting."
+  echo ""
+  # echo "🔍 Sending prompt to agy:"
+  # echo "  $PROMPT"
+  msg=$(agy --dangerously-skip-permissions --add-dir $(pwd) -p "$PROMPT")
+  echo "📝 Generated commit message:"
+  echo "  $msg"
+  echo ""
   git commit -m "$msg"
 }
 
-# Create PR by gemini
+# Create PR by antigravity cli
 gpr() {
   # 0. Check dependencies
   if ! command -v agy &>/dev/null; then
@@ -132,7 +139,9 @@ gpr() {
 
   # 5. Generate Title & Body
   # We ask for a specific format to make parsing easy
-  local PROMPT="Analyze these commits and generate a PR title and markdown body.
+  local REPO_PATH=$(pwd)
+  local PROMPT="Analyze these commits from the git repo at ${REPO_PATH} and generate a PR title and markdown body.
+Output ONLY raw plain text with no backticks, no code blocks, and no extra formatting.
 Output format:
 TITLE: <title>
 BODY:
@@ -141,7 +150,7 @@ BODY:
 Commits:
 $LOGS"
 
-  local AI_OUTPUT=$(agy --dangerously-skip-permissions -p "$PROMPT")
+  local AI_OUTPUT=$(agy --dangerously-skip-permissions --add-dir $(pwd) -p "$PROMPT")
 
   # 6. Parse Output
   local PR_TITLE=$(echo "$AI_OUTPUT" | grep "^TITLE:" | sed 's/^TITLE: //')
@@ -158,11 +167,11 @@ $LOGS"
   gh pr create --title "$PR_TITLE" --body "$PR_BODY" --base "$BASE_BRANCH"
 }
 
-# Create MR by gemini (GitLab)
+# Create MR by antigravity cli
 glpr() {
   # 0. Check dependencies
-  if ! command -v gemini &>/dev/null; then
-    echo "❌ Error: gemini-cli not found. Install from https://github.com/google-gemini/gemini-cli"
+  if ! command -v agy &>/dev/null; then
+    echo "❌ Error: agy not found."
     return 1
   fi
   if ! command -v glab &>/dev/null; then
@@ -193,7 +202,9 @@ glpr() {
   fi
 
   # 5. Generate Title & Body
-  local PROMPT="Analyze these commits and generate a MR title and markdown body.
+  local REPO_PATH=$(pwd)
+  local PROMPT="Analyze these commits from the git repo at ${REPO_PATH} and generate a MR title and markdown body.
+Output ONLY raw plain text with no backticks, no code blocks, and no extra formatting.
 Output format:
 TITLE: <title>
 BODY:
@@ -202,7 +213,7 @@ BODY:
 Commits:
 $LOGS"
 
-  local AI_OUTPUT=$(GEMINI_YOLO_MODE=true gemini -y --skip-trust -p "$PROMPT")
+  local AI_OUTPUT=$(agy --dangerously-skip-permissions --add-dir $(pwd) -p "$PROMPT")
 
   # 6. Parse Output
   local MR_TITLE=$(echo "$AI_OUTPUT" | grep "^TITLE:" | sed 's/^TITLE: //')
