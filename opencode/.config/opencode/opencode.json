@@ -52,16 +52,6 @@
     },
   },
   "mcp": {
-    "rtfm": {
-      "type": "local",
-      "command": [
-        "rtfm-serve"
-      ],
-      "environment": {
-        "RTFM_ROOT": "/Users/minh/gitrepos"
-      },
-      "enabled": true
-    },
     "code-review-graph": {
       "type": "local",
       "command": ["uvx", "code-review-graph", "serve"]

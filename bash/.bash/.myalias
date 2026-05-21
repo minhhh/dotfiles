@@ -98,8 +98,8 @@ function gcommit() {
 # Create PR by gemini
 gpr() {
   # 0. Check dependencies
-  if ! command -v gemini &>/dev/null; then
-    echo "❌ Error: gemini-cli not found. Install from https://github.com/google-gemini/gemini-cli"
+  if ! command -v agy &>/dev/null; then
+    echo "❌ Error: agy not found."
     return 1
   fi
   if ! command -v gh &>/dev/null; then
@@ -141,7 +141,7 @@ BODY:
 Commits:
 $LOGS"
 
-  local AI_OUTPUT=$(GEMINI_YOLO_MODE=true gemini -y --skip-trust -p "$PROMPT")
+  local AI_OUTPUT=$(agy --dangerously-skip-permissions -p "$PROMPT")
 
   # 6. Parse Output
   local PR_TITLE=$(echo "$AI_OUTPUT" | grep "^TITLE:" | sed 's/^TITLE: //')
