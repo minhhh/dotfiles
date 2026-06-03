@@ -91,11 +91,11 @@ function acommit() {
   if [ -z "$diff" ]; then echo "No staged changes."; return 1; fi
 
   # Generate message and commit
-  local PROMPT="Write a concise Conventional Commit message for the staged changes in the git repo at $(pwd). Output ONLY the raw message with no markdown, no backticks, no code blocks, and no extra formatting."
+  local PROMPT="Write a concise Conventional Commit message for the staged changes in the git repo at $(pwd). Output ONLY the raw message with no markdown, no backticks, no code blocks, and no extra formatting. Output to stdout"
   echo ""
   # echo "🔍 Sending prompt to agy:"
   # echo "  $PROMPT"
-  msg=$(agy --dangerously-skip-permissions --add-dir $(pwd) -p "$PROMPT")
+  msg=$(agy --dangerously-skip-permissions --add-dir $(pwd) -p "$PROMPT" 2>/dev/null)
   echo "📝 Generated commit message:"
   echo "  $msg"
   echo ""

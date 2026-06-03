@@ -20,7 +20,12 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 export HISTFILESIZE=5000
 
 # Disable Ctrl S remap
-stty stop undef
+if [[ -t 0 ]]; then
+    stty stop undef
+fi
+
+# Show possibilities immediately on the first tab press if there are multiple matches, instead of double-tabbing:
+set show-all-if-ambiguous on
 
 # alias
 [[ -s "$MYBASH_DIR/.myalias" ]] && source "$MYBASH_DIR/.myalias"
