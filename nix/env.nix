@@ -24,7 +24,6 @@ with import <nixpkgs> {}; [
     goku
     guile_3_0
     htop
-    hugo
     imagemagick
     jrnl
     multimarkdown
