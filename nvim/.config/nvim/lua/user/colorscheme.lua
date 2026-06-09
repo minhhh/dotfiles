@@ -27,6 +27,7 @@ vim.api.nvim_set_hl(0, 'FloatBorder', { fg = '#ff0000', bg = 'none' })
 if colorscheme == "onelight" then
   vim.api.nvim_set_hl(0, '@markup.heading.3.markdown', { fg = '#118dc3', bold = true })
   vim.api.nvim_set_hl(0, '@markup.heading.5.markdown', { fg = '#56b6c2', bold = true })
+  vim.api.nvim_set_hl(0, '@markup.list.markdown', { fg = '#1e40af' })
 elseif colorscheme == "onedark" then
   vim.api.nvim_set_hl(0, '@markup.heading.3.markdown', { fg = '#61afef', bold = true })
   vim.api.nvim_set_hl(0, '@markup.heading.5.markdown', { fg = '#56b6c2', bold = true })
