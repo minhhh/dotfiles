@@ -3,7 +3,7 @@ TMUX
 
 * Clone tpm
 ```
-git clone https://github.com/tmux-plugsin/tmp ~/.tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
 * Install plugins `prefix + I`
