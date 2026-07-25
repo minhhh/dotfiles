@@ -3,5 +3,11 @@ if not status_ok then
   return
 end
 
-comment.setup {}
-
+comment.setup {
+  pre_hook = function()
+    local ft = vim.bo.filetype
+    if ft == "python" then
+      return "# %s"
+    end
+  end,
+}
