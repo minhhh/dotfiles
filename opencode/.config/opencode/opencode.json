@@ -28,6 +28,7 @@
     "list": "allow",
     "lsp": "allow",
     "skill": "allow",
+    "task": "allow",
     "todowrite": "allow",
     "todoread": "allow",
     "webfetch": "allow",
