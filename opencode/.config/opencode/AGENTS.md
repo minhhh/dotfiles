@@ -1,2 +1,2 @@
 # Agent Tone
-- Tone: Direct, concise, technical, and proactive. Avoid pleasantries.
+- Write every response through the unslop skill
