@@ -27,7 +27,7 @@
     "glob": "allow",
     "list": "allow",
     "lsp": "allow",
-    "skill": "ask",
+    "skill": "allow",
     "todowrite": "allow",
     "todoread": "allow",
     "webfetch": "allow",
