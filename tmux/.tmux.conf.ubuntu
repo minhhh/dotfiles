@@ -11,10 +11,10 @@ set -g @resurrect-processes '"~vim" "~nvim"'
 set -g @resurrect-capture-pane-contents 'on'
 set -g @resurrect-strategy-vim 'session'
 set -g @resurrect-strategy-nvim 'session'
-set -g @resurrect-dir '/home/ubuntu/.tmux/resurrect'
+set -g @resurrect-dir '~/.tmux/resurrect'
 
 # tmux-resurrect: post save hooks
-set -g @resurrect-hook-post-save-all 'sed -i "" "/nvim/s/nvim --cmd lua [^ ]*/nvim/" /home/ubuntu/.tmux/resurrect/*.txt'
+set -g @resurrect-hook-post-save-all 'sed -i "/nvim/s/nvim --cmd lua [^ ]*/nvim/" /home/ubuntu/.tmux/resurrect/*.txt'
 
 #set -g default-command "reattach-to-user-namespace -l zsh"
 
@@ -30,6 +30,15 @@ unbind C-b
 
 # Set reload key to r
 bind r source-file ~/.tmux.conf
+
+# Manually bind prefix + Shift + i to run the TPM installer script
+bind I run '~/.tmux/plugins/tpm/bin/install_plugins'
+bind U run '~/.tmux/plugins/tpm/bin/update_plugins all'
+bind M-u run '~/.tmux/plugins/tpm/bin/clean_plugins'
+
+# Explicit manual overrides for saving and restoring
+bind-key c-s run-shell 'bash -l -c "~/.tmux/plugins/tmux-resurrect/scripts/save.sh"'
+bind-key c-r run-shell 'bash -l -c "~/.tmux/plugins/tmux-resurrect/scripts/restore.sh"'
 
 # No delay for escape key press
 set -sg escape-time 0
@@ -95,5 +104,6 @@ set -g status-right ' #[fg=green]'
 setw -g mouse on
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+set-environment -g TMUX_PLUGIN_MANAGER_PATH "$HOME/.tmux/plugins/"
 set-environment -g PATH "/usr/local/bin:/bin:/usr/bin:/home/ubuntu/.nix-profile/bin"
-run -b '~/.tmux/plugins/tpm/tpm'
+run '~/.tmux/plugins/tpm/tpm'
