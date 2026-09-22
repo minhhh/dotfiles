@@ -21,6 +21,10 @@ set -g @resurrect-hook-post-save-all 'sed -i "/nvim/s/nvim --cmd lua [^ ]*/nvim/
 # Set XTerm key bindings
 setw -g xterm-keys on
 
+# Forward modified keys (Shift+Enter, Ctrl+Enter) to applications
+set -g extended-keys on
+set -g extended-keys-format csi-u
+
 # Remap prefix to C-a
 # set -g prefix C-a
 set -g prefix Home
