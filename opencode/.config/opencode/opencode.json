@@ -31,7 +31,7 @@
     "task": "allow",
     "todowrite": "allow",
     "todoread": "allow",
-    "webfetch": "allow",
+    "webfetch": "ask",
     "websearch": "allow",
     "question": "allow",
     "bash": {
@@ -40,6 +40,9 @@
       "git *": "allow",
       "npm *": "allow",
       "grep *": "allow",
+      "cat *": "allow",
+      "tail *": "allow",
+      "head *": "allow",
       "gemini *": "allow"
     },
   },
