@@ -1,0 +1,23 @@
+# Enforce LF line endings in both the repository and the working tree on every OS.
+# This overrides core.autocrlf, so a Windows clone gets LF too.
+* text=auto eol=lf
+
+# Binary files: never convert, diff, or merge.
+*.scpt   binary
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.ico    binary
+*.icns   binary
+*.pdf    binary
+*.zip    binary
+*.gz     binary
+*.ttf    binary
+*.otf    binary
+*.woff   binary
+*.woff2  binary
+
+# Windows-native scripts: CRLF, because cmd.exe is picky.
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
