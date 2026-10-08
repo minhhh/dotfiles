@@ -1,0 +1,21 @@
+{
+  "lastChangelogVersion": "1.0.0",
+  "theme": "light",
+  "defaultProvider": "opencode-go",
+  "defaultModel": "deepseek-v4.1-flash",
+  "modelThinkingLevels": {
+    "opencode-go/deepseek-v4.1-flash": "low"
+  },
+  "tuiMode": "regular",
+  "packages": [
+    "https://github.com/minhhh/pi-web-access.git",
+    "https://github.com/minhhh/pi-mcp-adapter.git"
+  ],
+  "selectOrientation": "horizontal",
+  "extensions": [
+    "-builtin:mcp"
+  ],
+  "hideThinkingBlock": true,
+  "defaultTools": ["+codemode", "+grep", "+find", "+ls", "+tool_search"],
+  "steeringMode": "one-at-a-time"
+}
