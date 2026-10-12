@@ -6,6 +6,12 @@
  * fixed token count instead, which is easier to reason about when you switch
  * between models of different window sizes.
  *
+ * The check runs on `agent_settled`, the final notification boundary: retries,
+ * recovery compaction, and queued continuations have all finished, and the
+ * session is idle, so `ctx.compact()` cannot abort an in-flight run. Triggering
+ * earlier (for example on `turn_end`) would call `abort()` on a live run and cut
+ * off tool loops and queued work.
+ *
  * Threshold source, in order:
  *   1. `~/.pi/agent/mod-compact.json` (created by `/mod-compact save`, reloaded
  *      automatically when the file changes):
@@ -84,6 +90,8 @@ export default function (pi: ExtensionAPI) {
 	/**
 	 * False after a trigger, until context drops back to or below the threshold.
 	 * Prevents a re-trigger loop when the threshold sits below keepRecentTokens.
+	 * `agent_settled` fires once per settled run, so a stuck threshold would
+	 * otherwise re-compact on every prompt.
 	 */
 	let armed = true;
 	let watcher: fs.FSWatcher | undefined;
@@ -136,7 +144,7 @@ export default function (pi: ExtensionAPI) {
 		});
 	};
 
-	pi.on("turn_end", (_event, ctx) => {
+	pi.on("agent_settled", (_event, ctx) => {
 		const usage = ctx.getContextUsage();
 		const tokens = usage?.tokens ?? null;
 		if (tokens === null) return;
