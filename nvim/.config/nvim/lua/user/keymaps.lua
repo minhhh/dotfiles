@@ -83,11 +83,6 @@ end
 -- Map <leader>q to the custom function
 keymap("n", "<leader>q", ":lua CLOSE_AND_SWITCH_BUFFER()<CR>", opts)
 
--- Move text up and down
-keymap("n", "<A-j>", ":m .+1<CR>==", opts)
-keymap("n", "<A-k>", ":m .-2<CR>==", opts)
-
-
 -- Insert mode mappings --
 keymap("i", "<F2>", "<ESC><cmd>w<CR>a", opts)
 keymap("i", "<F4>", "<cmd>q<CR><cmd>q<CR>", opts)
@@ -97,9 +92,6 @@ keymap("i", "<F4>", "<cmd>q<CR><cmd>q<CR>", opts)
 
 -- Visual mode mappings --
 
--- Move text up and down
-keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
-keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 keymap("v", "<C-r>", '"hy:%s/<C-r>h//gc<left><left><left>', { noremap = true, silent = false })
 
 keymap("v", "<leader>a", "<cmd>EasyAlign<CR>", opts) -- toggle NvimTree
