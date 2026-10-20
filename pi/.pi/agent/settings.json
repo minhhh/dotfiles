@@ -15,7 +15,13 @@
   "extensions": [
     "-builtin:mcp"
   ],
-  "hideThinkingBlock": true,
-  "defaultTools": ["+codemode", "+grep", "+find", "+ls", "+tool_search"],
+  "hideThinkingBlock": false,
+  "defaultTools": [
+    "+codemode",
+    "+grep",
+    "+find",
+    "+ls",
+    "+tool_search"
+  ],
   "steeringMode": "one-at-a-time"
 }
