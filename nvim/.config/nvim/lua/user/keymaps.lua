@@ -93,18 +93,17 @@ keymap("i", "<F4>", "<cmd>q<CR><cmd>q<CR>", opts)
 -- Visual mode mappings --
 
 keymap("v", "<C-r>", '"hy:%s/<C-r>h//gc<left><left><left>', { noremap = true, silent = false })
-
 keymap("v", "<leader>a", "<cmd>EasyAlign<CR>", opts) -- toggle NvimTree
-
 keymap("v", "<C-j>", "2j", opts)
 keymap("v", "<C-k>", "2k", opts)
 
+-- Swallow J so a stray press does not join lines
+keymap("v", "J", "<Nop>", opts)
+
 -- Visual Block --
 -- Move text up and down
-keymap("x", "J", ":m '>+1<CR>gv=gv", opts)
-keymap("x", "K", ":m '<-2<CR>gv=gv", opts)
-keymap("x", "<A-j>", ":m '>+1<CR>gv=gv", opts)
-keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
+-- keymap("x", "<A-j>", ":m '>+1<CR>gv=gv", opts)
+-- keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 
 -- Terminal --
 -- Better terminal navigation
