@@ -14,9 +14,13 @@ vscode/Library/Application Support/Code/.com.microsoft.VSCode.*
 vscode/Library/Application Support/Code/DIPS
 vscode/Library/Application Support/Code/DIPS-wal
 vscode/Library/Application Support/Code/User/chatLanguageModels.json
+vscode/Library/Application Support/Code/User/agent-sessions.code-workspace
+vscode/Library/Application Support/Code/User/profiles/
 vscode/Library/Application Support/Code/blob_storage/
 vscode/Library/Application Support/Code/Local State
 vscode/Library/Application Support/Code/agent-host/
+vscode/Library/Application Support/Code/agentPlugins/
+vscode/Library/Application Support/Code/agentSessionData/
 *.swp
 .antigravitycli
 cache
