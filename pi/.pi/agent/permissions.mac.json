@@ -67,6 +67,7 @@
     "web_search": "allow",
     "fetch_content": "allow",
     "get_search_content": "allow",
+    "compact_context": "allow",
     "external_directory": {
       "~/gitrepos/**": "allow",
       "~/.dotfiles/**": "allow",
